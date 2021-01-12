@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>테스트</h1>
+	<tr th:each="sysadmin : ${userList}">
+		<td th:text="'id : ' + ${sysadmin.adminID}"></td>
+		<td th:text="'admin catg : ' + ${sysadmin.adminCatg}"></td>
+		<p/>
+	</tr>
+</body>
+</html>
