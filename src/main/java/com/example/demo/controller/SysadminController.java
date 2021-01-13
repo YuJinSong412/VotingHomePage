@@ -15,6 +15,7 @@ public class SysadminController {
     
   }
   
+  
   @GetMapping("/applicationStatusDetail")
   public String moveApplicationStatusDetail() {
     
