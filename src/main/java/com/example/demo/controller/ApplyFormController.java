@@ -5,13 +5,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-//@RequestMapping("/login")
-public class LoginController {
+public class ApplyFormController {
 
-  @GetMapping("/login")
-  public String moveLoginPage() {
+  @GetMapping("/applyForm")
+  public String moveApplyForm() {
+
+    return "applyForm";
     
-    return "login";
   }
 
 }
