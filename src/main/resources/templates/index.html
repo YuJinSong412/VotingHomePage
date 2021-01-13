@@ -2,14 +2,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>초기화면</title>
 </head>
 <body>
-<h1>테스트</h1>
-	<tr th:each="sysadmin : ${userList}">
-		<td th:text="'id : ' + ${sysadmin.adminID}"></td>
-		<td th:text="'admin catg : ' + ${sysadmin.adminCatg}"></td>
-		<p/>
-	</tr>
+	<p><a href="">이용 방법</a></p>
+	<p><a href="">고객센터</a></p>
+	<p><a href="/writeApp/home">이용신청서 작성</a></p>
+	<p><a href="/vote/home">투표하기</a></p>
+	<p><a href="/login/home">로그인</a></p>
 </body>
 </html>
