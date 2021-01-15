@@ -2,122 +2,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/indexStyle.css}">
 <title>메인화면</title>
-<style>
-body {
-	margin: 0;
-	padding: 0;
-}
-
-header {
-	height: 80px;
-	border-bottom: 1px solid #6B6B6B;
-	padding: 20px 550px 0px 650px;
-	background:#E5E5E5;
-}
-
-header img {
-	float: left;
-}
-
-header h1 {
-	float: left;
-	margin: 0;
-}
-
-header button {
-	position: absolute;
-	right: 0;
-	padding: 10px 30px;
-}
-
-nav {
-	height: 50px;
-	border-bottom: 1px solid #6B6B6B;
-}
-
-nav div {
-	height: 50ox;
-	float: left;
-}
-
-.button1 {
-	border-right: 1px solid #6B6B6B;
-}
-
-nav button {
-	padding: 15px 415px;
-	background-color: white;
-	border: none;
-	font-weight: bolder;
-	font-size: 165x;
-}
-
-section {
-	height: 823px;
-	border-bottom: 1px solid #6B6B6B;
-}
-
-section div{
-	text-align: center;
-
-}
-
-.sectionIcon{
-	padding-top: 300px;
-}
-.sectionTitle{
-	font-size: 30px;
-	padding-top: 4px;
-}
-
-.sectionList ul{
-	padding: 0px 500px;
-}
-.sectionList li{
-	list-style-type: none;
-	padding: 20px 0px;
-	border: 1px solid black;
-	margin-top:-1px; 
-}
-
-footer {
-	height: 30px;
-	background: #DFDFDF;
-	text-align: center;
-}
-
-</style>
 </head>
 <body>
 	<header>
-		<img src="" alt="한국전자투표 아이콘">
-		<h1>한국전자투표</h1>
-		<button type="button">로그인</button>
+        <img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="50px;" height="50px;">
+		  <h1>한국전자투표</h1>
+        <button type="button" class="loginBtn">로그인</button>
+           
 	</header>
 	
-	<nav>
-		<div class="button1">
-			<button type="button">이용 방법</button>
-		</div>
-		<div>
-			<button type="button">고객 센터</button>
-		</div>
-	</nav>
+	<div th:replace="gnb :: necGnb"></div>
 	
 	<section>
-		<div class="sectionIcon">
-			<img src="" alt="한국전자투표 아이콘">
-		</div>
-		<div class="sectionTitle">
+			<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="300px;" height="300px;">
 			<h3>아파트 e투표</h3>
-		</div>
-		<div class="sectionList">
 			<ul>
 				<li>이용신청서 작성</li>
 				<li>투표하기</li>
 			</ul>
-		</div>
+		
 	</section>
 	
 	<footer>

@@ -2,16 +2,35 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인 화면</title>
+<link rel="stylesheet" href="loginStyle.css">
+<title>메인화면</title>
 </head>
 <body>
-	<h1>로그인 화면</h1>
-	<form method="GET" action="/login/actionLogin">
-		<input type="text" id="loginId" name="loginId" value=""
-			placeholder="ID"><br> <input type="text" id="loginPW"
-			name="loginPW" value="" placeholder="PW"><br> <input
-			type="submit" value="로그인">
+	<header>
+        <img src="image/voting.png" alt="한국전자투표 아이콘" width="50px;" height="50px;">
+        <h1>한국전자투표</h1>
+	</header>
+	
+	<nav>
+        <button type="button" class="navBtn1">이용 방법</button>
+        <button type="button">고객 센터</button>
+	</nav>
+	
+	<section>
+		<img src="image/voting.png" alt="한국전자투표 아이콘" width="300px;" height="300px;">
+			<h3>로그인</h3>
+			<form method="GET" action="/login/actionLogin">
+                <input type="text" id="loginId" name="loginId" value=""
+			placeholder="ID"><br> 
+                <input type="text" id="loginPW"
+			name="loginPW" value="" placeholder="PW"><br> 
+                <button type="submit" value="로그인">로그인</button>
 	</form>
-
+	</section>
+	
+	<footer>
+		<small>(07255)서울특별시 영등포구 선유로 146 이앤씨드림타워 706호</small>
+	</footer>
+	
 </body>
 </html>
