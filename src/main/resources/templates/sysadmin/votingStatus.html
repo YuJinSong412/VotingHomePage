@@ -11,48 +11,22 @@
 			height="50px;">
 		<h1>한국전자투표</h1>
 		<button type="button" class="loginBtn">로그아웃</button>
-
 	</header>
 
-	<div th:replace="gnb/navGnb :: commonGnb"></div>
+	<div th:replace="gnb/navGnb :: sysAdminGnb"></div>
 
 	<section>
 		<div class="title">
 			<p>
-				투표 현황 <br> <span style="font-size: 15px;">만들어진 투표의 투표 실시 내역을 확인 및 내려받을 수 있습니다. 상세한 정보는 해당 투표를 클릭하시기 바랍니다.</span>
+				투표 현황 <br> <span style="font-size: 15px;">만들어진 투표의 투표 실시
+					내역을 확인 및 내려받을 수 있습니다. 상세한 정보는 해당 투표를 클릭하시기 바랍니다.</span>
 			</p>
 		</div>
 
 
 		<article>
-			<table class="appStatus">
-				<tr>
-					<th>아파트 명</th>
-					<th>날짜</th>
-					<th>상태</th>
-				</tr>
-				<tr>
-					<th>투표 제목</th>
-					<th>투표자 수</th>
-					<th></th>
-				</tr>
-			</table>
-
-			<form method="GET" action="/login/actionLogin">
-				<table class="appStatusList">
-					<tr>
-						<td>송여신</td>
-						<td>01-04 11:00 ~ 01-14 15:00</td>
-						<td rowspan="2" style="font-weight: bold;">투표 중
-							<button type="button" class="appDetail">상세</button>
-						</td>
-					</tr>
-					<tr>
-						<td>테스트 선거</td>
-						<td>10명</td>
-					</tr>
-				</table>
-			</form>
+			<div th:replace="gnb/voteList :: listTitle"></div>
+			<div th:replace="gnb/voteList :: listItem"></div>
 		</article>
 	</section>
 

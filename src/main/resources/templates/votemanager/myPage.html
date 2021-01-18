@@ -26,40 +26,12 @@
 
 
 		<article>
-			<table class="appStatus">
-				<tr>
-					<th>아파트 명</th>
-					<th>날짜</th>
-					<th>상태</th>
-				</tr>
-				<tr>
-					<th>투표 제목</th>
-					<th>투표자 수</th>
-					<th></th>
-				</tr>
-			</table>
-
-			<form method="GET" action="/login/actionLogin">
-				<table class="appStatusList">
-					<tr>
-						<td>송여신</td>
-						<td>01-04 11:00 ~ 01-14 15:00</td>
-						<td rowspan="2" style="font-weight: bold;">대기
-							<button type="button" class="appDetail">이력</button>
-						</td>
-					</tr>
-					<tr>
-						<td>테스트 선거</td>
-						<td>10명</td>
-					</tr>
-				</table>
-			</form>
+			<div th:replace="gnb/voteList :: listTitle"></div>
+			<div th:replace="gnb/voteList :: listItem"></div> <!-- 승인 버튼? 없애야함 -->
 		</article>
 	</section>
 
-	<footer>
-		<small>(07255)서울특별시 영등포구 선유로 146 이앤씨드림타워 706호</small>
-	</footer>
+	<div th:replace="gnb/footer :: footer"></div>
 
 </body>
 </html>
