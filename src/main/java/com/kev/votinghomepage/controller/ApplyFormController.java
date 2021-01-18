@@ -10,7 +10,7 @@ public class ApplyFormController {
   @GetMapping("/applyForm")
   public String moveApplyForm() {
 
-    return "applyForm";
+    return "common/applyForm";
     
   }
 

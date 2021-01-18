@@ -1,17 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>투표하기 메인화면</title>
+<link rel="stylesheet"th:href="@{/css/authenticationStyle.css}">
+<title>투표자 인증 화면</title>
 </head>
 <body>
-	<h1>투표자 인증 화면</h1>
-	<form method="GET" action="/vote/voting/overview">
-		동 - 호수를 입력해 주세요<br>
-		동-호수 : <input type="text" id="loginPW" name="loginPW" value=""><br>
-		연락처 : <input type="text" id="loginPW" name="loginPW" value=""><br>
-		<input type="submit" value="인증">
-	</form>
+	<header>
+		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="50px;"
+			height="50px;">
+		<h1>한국전자투표</h1>
+
+	</header>
+
+	<div th:replace="gnb/navGnb :: votersGnb"></div>
+
+	<section>
+		<div class="title">
+			<p>
+				투표자 인증 <br> <span style="font-size: 15px;">투표 참여 전 투표자의
+					정보를 인증하는 페이지입니다.</span>
+			</p>
+		</div>
+
+		<article>
+			<div class="authenticationBox">
+				<form method="GET" action="/login/actionLogin" class="authenForm">
+					<table class="authenTable">
+						<caption>동-호수를 입력해 주세요.</caption>
+						<tr>
+							<th>동-호수</th>
+							<td><input type="text" class="addr"> 동 &nbsp; &nbsp;
+								&nbsp; <input type="text" class="addr"> 호</td>
+						</tr>
+						<tr>
+							<th>연락처</th>
+							<td><input type="text" class="tel"></td>
+						</tr>
+					</table>
+					<button type="button" class="authenBtn">인증</button>
+				</form>
+			</div>
+		</article>
+
+	</section>
+
+	<div th:replace="gnb/footer :: footer"></div>
 
 </body>
 </html>

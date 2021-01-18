@@ -1,9 +1,26 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<div th:fragment="nav">
+<div th:fragment="commonGnb">
 	<div id="navGnbWrap">
 		<nav>
 			<button type="button" class="navBtn1">이용 방법</button>
 			<button type="button">고객 센터</button>
+		</nav>
+	</div>
+</div>
+<div th:fragment="voteManagerGnb">
+	<div id="navGnbWrap">
+		<nav>
+			<button type="button" class="navBtn1">마이페이지</button>
+			<button type="button" class="navBtn2">투표 만들기</button>
+			<button type="button">투표 관리</button>
+		</nav>
+	</div>
+</div>
+<div th:fragment="votersGnb">
+	<div id="navGnbWrap">
+		<nav>
+			<button type="button" class="navBtn1">투표하기</button>
+			<button type="button" class="navBtn2">투표 결과 확인</button>
 		</nav>
 	</div>
 </div>

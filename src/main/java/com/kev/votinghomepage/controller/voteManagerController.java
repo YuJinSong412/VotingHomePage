@@ -18,14 +18,14 @@ public class voteManagerController {
   @GetMapping("/voteOverview")
   public String moveVoteOverview() {
     
-    return "voteOverview";
+    return "common/voteOverview";
     
   }
   
-  @GetMapping("/makeVoteForm")
+  @GetMapping("/voteForm")
   public String moveMakeVoteForm() {
     
-    return "votemanager/makeVoteForm";
+    return "votemanager/voteForm";
     
   }
   
@@ -39,7 +39,7 @@ public class voteManagerController {
   @GetMapping("/voteResult")
   public String moveVoteResult() {
     
-    return "voteResult";
+    return "common/voteResult";
     
   }
 

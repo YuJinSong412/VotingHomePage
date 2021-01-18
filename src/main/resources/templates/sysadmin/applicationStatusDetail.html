@@ -1,10 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/applicationStatusStyle.css}">
+<title>시스템 관리자 - 신청서 현황</title>
 </head>
 <body>
-	<h1>신청서 현황 상세 화면</h1>
+	<header>
+		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="50px;"
+			height="50px;">
+		<h1>한국전자투표</h1>
+		<button type="button" class="loginBtn">로그아웃</button>
+
+	</header>
+
+	<div th:replace="gnb/navGnb :: commonGnb"></div>
+
+	<section>
+		<div class="title">
+			<p>
+				신청서 현황 <br> <span style="font-size: 15px;">접수된 이용신청서의 투표
+					정보를 확인하고 승인/반려 여부를 처리합니다.</span>
+			</p>
+		</div>
+
+
+		<article>
+			<table class="appStatus">
+				<tr>
+					<th>아파트 명</th>
+					<th>날짜</th>
+					<th>상태</th>
+				</tr>
+				<tr>
+					<th>투표 제목</th>
+					<th>투표자 수</th>
+					<th></th>
+				</tr>
+			</table>
+
+			<form method="GET" action="/login/actionLogin">
+				<table class="appStatusList">
+					<tr>
+						<td>송여신</td>
+						<td>01-04 11:00 ~ 01-14 15:00</td>
+						<td rowspan="2" style="font-weight: bold;">대기
+							<button type="button" class="appDetail">이력</button>
+							<button type="button" class="appApprove">승인</button>
+						</td>
+					</tr>
+					<tr>
+						<td>테스트 선거</td>
+						<td>10명</td>
+					</tr>
+				</table>
+			</form>
+		</article>
+	</section>
+
+	<div th:replace="gnb/footer :: footer"></div>
+
 </body>
 </html>

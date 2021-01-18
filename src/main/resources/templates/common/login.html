@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" th:href="@{/css/loginStyle.css}">
-<title>메인화면</title>
+<title>로그인 화면</title>
 </head>
 <body>
 	<header>
@@ -12,7 +12,7 @@
 		<h1>한국전자투표</h1>
 	</header>
 
-	<div th:replace="gnb/navGnb :: nav"></div>
+	<div th:replace="gnb/navGnb :: commonGnb"></div>
 
 	<section>
 		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="300px;"
@@ -26,7 +26,7 @@
 		</form>
 	</section>
 
-	<div th:replace="gnb/footerGnb :: footer"></div>
+	<div th:replace="gnb/footer :: footer"></div>
 
 </body>
 </html>

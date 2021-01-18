@@ -26,7 +26,7 @@ public class SysadminController {
   @GetMapping("/voteOverview")
   public String moveOverview() {
     
-    return "voteOverview";
+    return "common/voteOverview";
     
   }
   
@@ -40,7 +40,7 @@ public class SysadminController {
   @GetMapping("/voteResult")
   public String moveVoteResult() {
     
-    return "voteResult";
+    return "common/voteResult";
     
   }
 

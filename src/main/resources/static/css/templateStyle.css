@@ -65,7 +65,7 @@ nav .navBtn1{
 }
 
 section{
-    height: 660px;
+    height: 720px;
     display: flex;
     padding-top: 100px;
     align-items:center; 
@@ -74,7 +74,6 @@ section{
 
 footer{
     height: 20px;
-   
     border-top: 2px solid #969696;
 }
 

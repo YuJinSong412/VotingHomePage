@@ -1,16 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/votingStyle.css}">
 <title>투표하기 화면</title>
 </head>
 <body>
-	<h1>투표하기 화면</h1>
-	<p>찬성</p>
-	<p>반대</p>
+	<header>
+		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="50px;"
+			height="50px;">
+		<h1>한국전자투표</h1>
 
-	<form method="GET" action="/voter/voting/votingResult">
-		<input type="submit" value="투표 완료">
-	</form>
+	</header>
+
+	<div th:replace="gnb/navGnb :: votersGnb"></div>
+	
+	<section>
+		<div class="title">
+			<p>
+				투표하기 <br> <span style="font-size: 15px;">투표 참여하는 페이지입니다.</span>
+			</p>
+		</div>
+
+		<article>
+			<h2>투표 제목</h2>
+			<hr>
+			<form>
+				<div class="voteContent">
+					<div class="candidate">
+						<h3>1. 후보자</h3>
+						<div class="candidateName">송유진</div>
+					</div>
+					<div class="prosAndCons">
+						<button type="button" class="approveBtn">찬성</button>
+						<button type="button" class="disapproveBtn">반대</button>
+					</div>
+					<div></div>
+				</div>
+				<div class="voteSubmit">
+					<button type="button" class="voteCompleted">투표 완료</button>
+				</div>
+			</form>
+		</article>
+
+	</section>
+
+	<div th:replace="gnb/footer :: footer"></div>
+
 </body>
 </html>

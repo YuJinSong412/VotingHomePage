@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/voteResultStyle.css}">
+<title>투표 결과 확인 화면</title>
+</head>
+<body>
+	<header>
+
+	</header>
+
+	<nav>
+	
+	</nav>
+
+	<section>
+		<div class="title">
+			<p>
+				개표 결과 보기<br> <span style="font-size: 15px;">개표 결과를 확인하실
+					수 있습니다. </span>
+			</p>
+		</div>
+
+		<article>
+			<h2>1. 후보자</h2>
+			<hr>
+			<div class="candidateName">송유진</div>
+
+			<h2>2. 정보</h2>
+			<hr>
+			<table border=2 class="personalInfo">
+				<tr>
+					<th>총원</th>
+					<td>10명</td>
+				</tr>
+				<tr>
+					<th>투표 인원</th>
+					<td>10명</td>
+				</tr>
+			</table>
+
+			<table border=2 class="voteResultInfo">
+				<tr>
+					<th>기호</th>
+					<th>후보</th>
+					<th>찬성</th>
+					<th>반대</th>
+					<th>득표율</th>
+				</tr>
+				<tr>
+					<td>1번</td>
+					<td>송유진</td>
+					<td>10표</td>
+					<td>0표</td>
+					<td>100%</td>
+				</tr>
+			</table>
+		</article>
+
+	</section>
+
+</body>
+</html>

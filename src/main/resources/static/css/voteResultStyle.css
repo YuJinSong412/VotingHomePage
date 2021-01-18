@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 @font-face {
     font-family: 'MaplestoryOTFBold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
@@ -64,31 +63,63 @@ nav .navBtn1{
     border-right: 3px solid #D6D6D6;
 }
 
+nav .navBtn2{
+    border-right: 3px solid #D6D6D6;
+}
+
+nav .navBtn3{
+    background-color: #D2D2D2;
+}
+
 section{
-    height: 720px;
-    display: flex;
-    padding-top: 100px;
-    align-items:center; 
+    height: 800px;
+    display: flex; 
     flex-direction: column;
 }
 
-section h3{
-    font-size: 30px;
-    margin: 15px;
+section .title{
+    background-color: #01C7C7;
+    height: 100px;
 }
 
-section ul{
-    margin: 60px 0px;
-}
-section ul li{
-    list-style-type: none;
+section .title p{
+    color: white;
     font-size: 30px;
-    border: 2px solid black;
-    margin-top:-1px;
-    width: 600px;
-    height: 50px;
+    margin: 15px 20px;
+}
+
+article{
+    margin: 15px 20px;
+}
+
+article .candidateName{
+    border-bottom: 1px solid black;
+    width: 500px;
+    margin-top: 30px;
+    margin-bottom: 100px;
+    font-size: 25px;
+    color: #0020FF;
+    padding-left: 15px;
+}
+
+article .personalInfo{
+    border-collapse: collapse;
+    width: 400px;
+    margin-bottom: 40px;
+}
+
+.personalInfo th,td{
+    width: 300px; 
+    height: 60px;
     text-align: center;
-    
+}
+
+article .voteResultInfo{
+    border-collapse: collapse;
+}
+
+.voteResultInfo th{
+    height: 30px;
 }
 
 footer{

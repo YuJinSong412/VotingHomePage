@@ -1,0 +1,160 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: 'MaplestoryOTFBold';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'MaplestoryOTFLight';
+	src:
+		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFLight.woff')
+		format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'MaplestoryOTFLight';
+}
+
+header {
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header h1 {
+	font-family: 'MaplestoryOTFBold';
+}
+
+header .loginBtn {
+	position: absolute;
+	right: 0;
+	margin-right: 10px;
+	border-radius: 7px;
+	border-color: #027BE4;
+	width: 100px;
+	height: 50px;
+	font-size: 17px;
+	font-family: 'MaplestoryOTFLight';
+	background-color: white;
+}
+
+nav {
+	height: 50px;
+	border-top: 3px solid #D6D6D6;
+	border-bottom: 3px solid #D6D6D6;
+	display: flex;
+	justify-content: space-around;
+}
+
+nav button {
+	border: none;
+	background-color: white;
+	font-size: 20px;
+	font-family: 'MaplestoryOTFLight';
+	width: 960px;
+}
+
+nav .navBtn1 {
+	border-right: 3px solid #D6D6D6;
+	background-color: #D2D2D2;
+}
+
+section {
+	height: 800px;
+	display: flex;
+	flex-direction: column;
+}
+
+section .title {
+	background-color: #01C7C7;
+	height: 100px;
+}
+
+section .title p {
+	color: white;
+	font-size: 30px;
+	margin: 15px 20px;
+}
+
+article {
+	margin: 15px 20px;
+	height: 600px;
+}
+
+article h2 {
+	text-align: center;
+}
+
+article .voteOverviewTB {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.voteOverviewTB th {
+	width: 200px;
+	height: 50px;
+	text-align: left;
+}
+
+article .candidateName {
+	border-bottom: 1px solid black;
+	width: 300px;
+	margin-top: 30px;
+	font-size: 25px;
+	color: #0020FF;
+	padding-left: 15px;
+}
+
+.voteContent {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 200px;
+}
+
+.prosAndCons {
+	display: flex;
+	flex-direction: column;
+}
+
+.prosAndCons button {
+	margin-bottom: 20px;
+	margin-right: 10px;
+	border-radius: 7px;
+	border-color: #027BE4;
+	width: 150px;
+	height: 50px;
+	font-size: 17px;
+	font-family: 'MaplestoryOTFLight';
+	background-color: white;
+}
+
+.voteSubmit .voteCompleted {
+	position: absolute;
+	right: 0;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	border-radius: 7px;
+	border-color: #B1CFF1;
+	width: 150px;
+	height: 50px;
+	font-size: 17px;
+	font-family: 'MaplestoryOTFLight';
+	background-color: #B1CFF1;
+	color: white;
+	margin-top: 30px;
+}
+
+footer {
+	height: 20px;
+	border-top: 2px solid #969696;
+}

@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/voteManagementFormStyle.css}">
+<title>투표 관리 화면</title>
 </head>
 <body>
-	<h1>투표 관리 화면</h1>
+	<header>
+		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="50px;"
+			height="50px;">
+		<h1>한국전자투표</h1>
+		<button type="button" class="loginBtn">로그아웃</button>
+
+	</header>
+
+	<div th:replace="gnb/navGnb :: voteManagerGnb"></div>
+
+	<section>
+		<div class="title">
+			<p>
+				투.개표 관리<br> <span style="font-size: 15px;">투표 상태를 변경하실 수
+					있는 페이지입니다. 특히, 일시정지 상태에서 투표 종료 시각이 지나거나 무효 버튼을 클릭하면 개표를 하실 수 없으니
+					주의하세요. </span>
+			</p>
+		</div>
+
+		<article>
+			<div class="statusBox">
+				<p>투표 시작 전</p>
+				<button type="button" class="voteStartBtn">투표 시작</button>
+				<small>투표 시작 버튼을 누르면 투표가 시작됩니다.</small>
+			</div>
+		</article>
+
+	</section>
+
+	<div th:replace="gnb/footer :: footer"></div>
+
 </body>
 </html>
