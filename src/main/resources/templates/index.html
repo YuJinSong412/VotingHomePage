@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" th:href="@{/css/indexStyle.css}">
@@ -7,27 +7,27 @@
 </head>
 <body>
 	<header>
-        <img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="50px;" height="50px;">
-		  <h1>한국전자투표</h1>
-        <button type="button" class="loginBtn">로그인</button>
-           
+		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="50px;"
+			height="50px;">
+		<h1>한국전자투표</h1>
+		<button type="button" class="loginBtn">로그인</button>
+
 	</header>
-	
-	<div th:replace="gnb :: necGnb"></div>
-	
+
+	<div th:replace="gnb/navGnb :: nav"></div>
+
 	<section>
-			<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="300px;" height="300px;">
-			<h3>아파트 e투표</h3>
-			<ul>
-				<li>이용신청서 작성</li>
-				<li>투표하기</li>
-			</ul>
-		
+		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="300px;"
+			height="300px;">
+		<h3>아파트 e투표</h3>
+		<ul>
+			<li>이용신청서 작성</li>
+			<li>투표하기</li>
+		</ul>
+
 	</section>
 	
-	<footer>
-		<small>(07255)서울특별시 영등포구 선유로 146 이앤씨드림타워 706호</small>
-	</footer>
+	<div th:replace="gnb/footerGnb :: footer"></div>
 	
 </body>
 </html>
