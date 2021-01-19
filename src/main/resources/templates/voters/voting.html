@@ -2,6 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/commonStyle.css}">
+<link rel="stylesheet" th:href="@{/css/applicationStatusStyle.css}">
 <link rel="stylesheet" th:href="@{/css/votingStyle.css}">
 <title>투표하기 화면</title>
 </head>
@@ -13,7 +15,7 @@
 		<div th:replace="gnb/pageTitle :: votingTitle"></div>
 
 		<article>
-			<h2>투표 제목</h2>
+			<h2 class="votingTitle">투표 제목</h2>
 			<hr>
 			<form>
 				<div class="voteContent">

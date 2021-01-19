@@ -1,3 +1,13 @@
+@charset "UTF-8";
+
+nav .navBtn1 {
+	border-right: 3px solid #D6D6D6;
+}
+
+nav .navBtn2 {
+	border-right: 3px solid #D6D6D6;
+}
+
 section{
     height: 720px;
     display: flex;
