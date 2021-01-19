@@ -70,11 +70,11 @@ section .title {
 section .title p {
 	color: white;
 	font-size: 30px;
-	margin: 15px 20px;
+	margin: 15px 20%;
 }
 
 article {
-	margin: 100px 70px;
+	margin: 100px 20%;
 }
 
 article .authenticationBox {

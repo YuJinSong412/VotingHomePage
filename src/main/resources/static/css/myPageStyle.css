@@ -87,11 +87,11 @@ section .title {
 section .title p {
 	color: white;
 	font-size: 30px;
-	margin: 15px 20px;
+	margin: 15px 20%;
 }
 
 article {
-	margin: 15px 20px;
+	margin: 15px 20%;
 }
 
 article .appStatus {

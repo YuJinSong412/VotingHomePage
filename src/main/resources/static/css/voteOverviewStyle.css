@@ -55,7 +55,7 @@ nav button{
     background-color: white;
     font-size: 20px;
     font-family: 'MaplestoryOTFLight';
-    width: 960px;
+    width: 50%;
    
 }
 
@@ -71,7 +71,7 @@ section{
 }
 
 article{
-    margin: 15px 20px;
+    margin: 15px 20%;
 }
 
 article .voteOverviewTB{
