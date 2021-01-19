@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+
+article #subPage{
+	margin-top: 20px;
+	border: 1px solid black;
+	min-height: 10px;
+}

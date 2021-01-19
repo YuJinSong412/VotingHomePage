@@ -20,7 +20,8 @@
 				<td>송여신</td>
 				<td>01-04 11:00 ~ 01-14 15:00</td>
 				<td rowspan="2" style="font-weight: bold;">대기
-					<button type="button" class="appDetail">이력</button>
+					<button type="button" class="appDetail" id="appDetail"
+						onclick="myFunction()">이력</button>
 					<button th:if="${adminButton}" type="button" class="appApprove">승인</button>
 				</td>
 			</tr>
@@ -30,5 +31,93 @@
 			</tr>
 		</table>
 	</form>
+</th:block>
+<th:block th:fragment="voteResult">
+	<div id="subPage" style="display: none;">
+		<div th:replace="common/voteResult"></div>
+	</div>
+</th:block>
+<th:block th:fragment="voteOverview">
+	<div id="subPage" style="display: none;">
+		<div th:replace="common/voteOverview"></div>
+	</div>
+</th:block>
+<th:block th:fragment="applyForm">
+	<div id="subPage" style="display: none;">
+		<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/commonStyle.css}">
+<link rel="stylesheet" th:href="@{/css/applyFormStyle.css}">
+<title>이용신청서 작성화면</title>
+</head>
+<body>
+	<section>
+		<div th:replace="gnb/pageTitle :: applyFormTitle"></div>
+
+		<article>
+			<form method="GET" action="/login/actionLogin">
+				<table class="apartInfo">
+					<caption>1. 아파트 정보</caption>
+					<tr>
+						<th>아파트명</th>
+						<td><input type="text" id="loginId" name="loginId" value=""></td>
+					</tr>
+					<tr>
+						<th>아파트 연락처</th>
+						<td><input type="text" id="loginId" name="loginId" value=""></td>
+					</tr>
+					<tr>
+						<th>사업자 등록번호</th>
+						<td><input type="text" id="loginId" name="loginId" value=""></td>
+					</tr>
+				</table>
+
+				<table class="managerInfo">
+					<caption>2. 관리자 정보</caption>
+					<tr>
+						<th>관리자 성명</th>
+						<td><input type="text" id="loginId" name="loginId" value=""></td>
+					</tr>
+					<tr>
+						<th>관리자 직위</th>
+						<td><input type="text" id="loginId" name="loginId" value=""></td>
+					</tr>
+					<tr>
+						<th>관리자 연락처 (하이픈(-)포함)</th>
+						<td><input type="text" id="loginId" name="loginId" value=""></td>
+					</tr>
+				</table>
+
+				<table class="voteInfo">
+					<caption>3. 투표 정보</caption>
+					<tr>
+						<th>투표 제목 (대표 안건명)</th>
+						<td><input type="text" id="loginId" name="loginId" value=""></td>
+					</tr>
+					<tr>
+						<th>예상 투표자 수</th>
+						<td><input type="text" id="loginId" name="loginId" value=""></td>
+					</tr>
+					<tr>
+						<th>투표 시작</th>
+						<td><input type="datetime-local" id="votetime"
+							name="votetime"></td>
+					</tr>
+					<tr>
+						<th>투표 종료</th>
+						<td><input type="datetime-local" id="votetime"
+							name="votetime"></td>
+					</tr>
+				</table>
+
+			</form>
+		</article>
+
+	</section>
+</body>
+</html>
+	</div>
 </th:block>
 </html>

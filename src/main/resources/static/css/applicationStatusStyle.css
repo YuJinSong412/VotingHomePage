@@ -29,7 +29,7 @@ nav .voterNavBtn2 {
 }
 
 section {
-	height: 800px;
+	min-height: 800px;
 	display: flex;
 	flex-direction: column;
 }

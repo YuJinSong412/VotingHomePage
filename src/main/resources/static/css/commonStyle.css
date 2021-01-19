@@ -48,6 +48,11 @@ header .loginBtn {
 	background-color: white;
 }
 
+header .loginBtn a{
+	text-decoration: none;
+	color : black;
+}
+
 nav {
 	height: 50px;
 	border-top: 3px solid #D6D6D6;

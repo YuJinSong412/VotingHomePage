@@ -14,9 +14,9 @@
 		<div th:replace="gnb/imgCommon :: siteIcon"></div>
 		<h3 class="apartEvoteTitle">아파트 e투표</h3>
 		<div class="movePage">
-			<button>이용신청서 작성</button>
+			<button class="applyFormBtn"><a href="applyForm">이용신청서 작성</a></button>
 			<br>
-			<button>투표하기</button>
+			<button class="voteBtn"><a th:href="@{/voters/authentication}">투표하기</a></button>
 		</div>
 
 	</section>

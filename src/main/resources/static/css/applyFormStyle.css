@@ -9,7 +9,7 @@ nav .navBtn2 {
 }
 
 section {
-	height: 850px;
+	min-height: 850px;
 	display: flex;
 	flex-direction: column;
 }
@@ -88,4 +88,3 @@ article form .applyButton {
 	font-family: 'MaplestoryOTFLight';
 	border-radius: 7px;
 }
-\
