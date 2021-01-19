@@ -2,32 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/commonStyle.css}">
 <link rel="stylesheet" th:href="@{/css/applicationStatusStyle.css}">
 <title>시스템 관리자 - 신청서 현황</title>
 </head>
 <body>
-	<header>
-		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="50px;"
-			height="50px;">
-		<h1>한국전자투표</h1>
-		<button type="button" class="loginBtn">로그아웃</button>
-
-	</header>
-
+	<div th:replace="gnb/header :: header(true)"></div>
 	<div th:replace="gnb/navGnb :: sysAdminGnb"></div>
 
 	<section>
-		<div class="title">
-			<p>
-				신청서 현황 <br> <span style="font-size: 15px;">접수된 이용신청서의 투표
-					정보를 확인하고 승인/반려 여부를 처리합니다.</span>
-			</p>
-		</div>
-
+		<div th:replace="gnb/pageTitle :: applicationStatusTitle"></div>
 
 		<article>
 			<div th:replace="gnb/voteList :: listTitle"></div>
-			<div th:replace="gnb/voteList :: listItem"></div>
+			<div th:replace="gnb/voteList :: listItem(true)"></div>
 		</article>
 	</section>
 

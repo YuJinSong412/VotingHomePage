@@ -2,25 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" th:href="@{/css/indexStyle.css}">
+<link rel="stylesheet" th:href="@{/css/common.css}">
+<link rel="stylesheet" th:href="@{/css/indexAndLoginStyle.css}">
 <title>메인화면</title>
 </head>
 <body>
-	<header>
-		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="50px;"
-			height="50px;">
-		<h1>한국전자투표</h1>
-		<button type="button" class="loginBtn">로그인</button>
-	</header>
-
+	<div th:replace="gnb/header :: header(true)"></div>
 	<div th:replace="gnb/navGnb :: commonGnb"></div>
 
 	<section>
-		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="300px;"
-			height="300px;">
-		<h3>아파트 e투표</h3>
+		<div th:replace="gnb/imgCommon :: siteIcon"></div>
+		<h3 class="apartEvoteTitle">아파트 e투표</h3>
 		<div class="movePage">
-			<button>이용신청서 작성</button><br>
+			<button>이용신청서 작성</button>
+			<br>
 			<button>투표하기</button>
 		</div>
 

@@ -87,10 +87,17 @@ section .title {
 	height: 100px;
 }
 
-section .title p {
+section .title .pageTitle {
 	color: white;
 	font-size: 30px;
 	margin: 15px 20%;
+}
+
+section .title .pageDesc {
+	color: white;
+	font-size: 30px;
+	margin: 15px 20%;
+	font-size: 15px;
 }
 
 article {

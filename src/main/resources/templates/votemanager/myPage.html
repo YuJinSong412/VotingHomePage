@@ -6,28 +6,15 @@
 <title>투표 관리자 - 마이페이지</title>
 </head>
 <body>
-	<header>
-		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="50px;"
-			height="50px;">
-		<h1>한국전자투표</h1>
-		<button type="button" class="loginBtn">로그아웃</button>
-
-	</header>
-
+	<div th:replace="gnb/header :: header(true)"></div>
 	<div th:replace="gnb/navGnb :: voteManagerGnb"></div>
 
 	<section>
-		<div class="title">
-			<p>
-				마이페이지<br> <span style="font-size: 15px;">접수된 이용신청서의 투표
-					정보를 확인하세요.</span>
-			</p>
-		</div>
-
+		<div th:replace="gnb/pageTitle :: myPageTitle"></div>
 
 		<article>
 			<div th:replace="gnb/voteList :: listTitle"></div>
-			<div th:replace="gnb/voteList :: listItem"></div> <!-- 승인 버튼? 없애야함 -->
+			<div th:replace="gnb/voteList :: listItem(false)"></div>
 		</article>
 	</section>
 

@@ -2,23 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" th:href="@{/css/loginStyle.css}">
+<link rel="stylesheet" th:href="@{/css/common.css}">
+<link rel="stylesheet" th:href="@{/css/indexAndLoginStyle.css}">
 <title>로그인 화면</title>
 </head>
 <body>
-	<header>
-		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="50px;"
-			height="50px;">
-		<h1>한국전자투표</h1>
-	</header>
-
+	<div th:replace="gnb/header :: header(false)"></div>
 	<div th:replace="gnb/navGnb :: commonGnb"></div>
 
 	<section>
-		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="300px;"
-			height="300px;">
-		<h3>로그인</h3>
-		<form method="GET" action="/login/actionLogin">
+		<div th:replace="gnb/imgCommon :: siteIcon"></div>
+		<h3 class="sectionloginTitle">로그인</h3>
+		<form class="loginForm" method="GET" action="/login/actionLogin">
 			<input type="text" id="loginId" name="loginId" value=""
 				placeholder="ID"><br> <input type="text" id="loginPW"
 				name="loginPW" value="" placeholder="PW"><br>

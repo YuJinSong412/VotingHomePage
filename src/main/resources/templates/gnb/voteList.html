@@ -1,5 +1,5 @@
 <html xmlns:th="http://www.thymeleaf.org">
-<div th:fragment="listTitle">
+<th:block th:fragment="listTitle">
 	<table class="appStatus">
 		<tr>
 			<th>아파트 명</th>
@@ -12,8 +12,8 @@
 			<th></th>
 		</tr>
 	</table>
-</div>
-<div th:fragment="listItem">
+</th:block>
+<th:block th:fragment="listItem(adminButton)">
 	<form method="GET" action="/login/actionLogin">
 		<table class="appStatusList">
 			<tr>
@@ -21,7 +21,7 @@
 				<td>01-04 11:00 ~ 01-14 15:00</td>
 				<td rowspan="2" style="font-weight: bold;">대기
 					<button type="button" class="appDetail">이력</button>
-					<button type="button" class="appApprove">승인</button>
+					<button th:if="${adminButton}" type="button" class="appApprove">승인</button>
 				</td>
 			</tr>
 			<tr>
@@ -30,5 +30,5 @@
 			</tr>
 		</table>
 	</form>
-</div>
+</th:block>
 </html>

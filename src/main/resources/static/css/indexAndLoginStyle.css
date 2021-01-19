@@ -1,0 +1,52 @@
+section{
+    height: 720px;
+    display: flex;
+    padding-top: 100px;
+    align-items:center; 
+    flex-direction: column;
+}
+
+section .sectionloginTitle{
+    font-size: 30px;
+    margin: 15px;
+}
+
+section .loginForm{
+    margin: 60px 0px;
+}
+section .loginForm input{
+    font-size: 30px;
+    border: 2px solid black;
+    margin-top:-1px;
+    width: 600px;
+    height: 50px;
+    text-align: center; 
+}
+
+section .loginForm button{
+    font-size: 20px;
+    width: 608px;
+    height: 50px;
+    text-align: center; 
+    font-family: 'MaplestoryOTFLight';
+    margin-top:10px;
+    border-radius: 7px;
+}
+
+section .apartEvoteTitle{
+    font-size: 30px;
+    margin: 15px;
+}
+
+section .movePage{
+	 margin: 60px 0px;
+}
+.movePage button{
+	font-size: 30px;
+    border: 2px solid black;
+    margin-top:-1px;
+    width: 600px;
+    height: 50px;
+    text-align: center;
+    background-color: white;
+}

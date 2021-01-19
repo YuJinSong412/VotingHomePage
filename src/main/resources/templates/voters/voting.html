@@ -6,21 +6,11 @@
 <title>투표하기 화면</title>
 </head>
 <body>
-	<header>
-		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="50px;"
-			height="50px;">
-		<h1>한국전자투표</h1>
-
-	</header>
-
+	<div th:replace="gnb/header :: header(false)"></div>
 	<div th:replace="gnb/navGnb :: votersGnb"></div>
 	
 	<section>
-		<div class="title">
-			<p>
-				투표하기 <br> <span style="font-size: 15px;">투표 참여하는 페이지입니다.</span>
-			</p>
-		</div>
+		<div th:replace="gnb/pageTitle :: votingTitle"></div>
 
 		<article>
 			<h2>투표 제목</h2>

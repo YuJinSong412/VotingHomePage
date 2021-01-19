@@ -6,23 +6,11 @@
 <title>이용신청서 작성화면</title>
 </head>
 <body>
-	<header>
-		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="50px;"
-			height="50px;">
-		<h1>한국전자투표</h1>
-		<button type="button" class="loginBtn">로그인</button>
-
-	</header>
-
+	<div th:replace="gnb/header :: header(true)"></div>
 	<div th:replace="gnb/navGnb :: commonGnb"></div>
 
 	<section>
-		<div class="title">
-			<p>
-				이용신청서 작성 <br> <span style="font-size: 15px;">이용신청서를
-					작성하시려면 아래의 확인 상황과 개인정보처리방침을 모두 확인하시기 바랍니다.</span>
-			</p>
-		</div>
+		<div th:replace="gnb/pageTitle :: applyFormTitle"></div>
 
 		<article>
 			<form method="GET" action="/login/actionLogin">
