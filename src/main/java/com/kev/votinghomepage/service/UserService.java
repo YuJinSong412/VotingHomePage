@@ -1,9 +1,9 @@
 package com.kev.votinghomepage.service;
 
 import java.util.List;
-import com.kev.votinghomepage.dto.UserDTO;
+import com.kev.votinghomepage.dto.SysAdminDTO;
 
 public interface UserService {
 
-  List<UserDTO> getAllUser();
+  List<SysAdminDTO> getAllUser();
 }

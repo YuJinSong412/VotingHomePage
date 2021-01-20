@@ -35,12 +35,6 @@
 			onclick="movePage('/voters/authentication')">투표하기</button>
 		<th:block th:if="${activeNav == 'voteResult'}">
 			<button type="button" class="voterNavBtn2 active">투표 결과 확인</button>
-			<!--/* 			<button type="button" class="voterNavBtn2"
-				th:class="${activeNav == 'voteResult'} ? 'active' : ''"
-				th:disabled="${activeNav == 'authentication'} ? true : false"
-				th:style="${activeNav == 'authentication'} ? 'cursor: not-allowed' : 'cursor: not-allowed'"
-				onclick="movePage('/voters/voteResult')">투표 결과 확인</button>
-				 */-->
 		</th:block>
 		<th:block th:if="${activeNav == 'authentication'}">
 			<button type="button" class="voterNavBtn2" disabled="true"

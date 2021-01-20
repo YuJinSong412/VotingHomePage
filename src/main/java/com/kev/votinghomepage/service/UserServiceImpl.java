@@ -4,7 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.kev.votinghomepage.dao.UserRepository;
-import com.kev.votinghomepage.dto.UserDTO;
+import com.kev.votinghomepage.dto.SysAdminDTO;
 
 @Service
 public class UserServiceImpl implements UserService{
@@ -14,7 +14,7 @@ public class UserServiceImpl implements UserService{
   
   
   @Override
-  public List<UserDTO> getAllUser() {
+  public List<SysAdminDTO> getAllUser() {
     
     return userRepository.findAll();
 
