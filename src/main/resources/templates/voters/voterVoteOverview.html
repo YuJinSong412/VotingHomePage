@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" th:href="@{/css/commonStyle.css}">
+<link rel="stylesheet" th:href="@{/css/applicationStatusStyle.css}">
+<title>투표자 - 투표 개요 화면</title>
+<script defer th:src="@{/javascript/movePage.js}"></script>
+</head>
+<body>
+	<div th:replace="gnb/header :: header(false)"></div>
+	<div th:replace="gnb/navGnb :: votersGnb(activeNav='authentication')"></div>
+	<div th:replace="gnb/voteList :: voteOverview2"></div>
+	<button type="button" class="voterVoteOverviewBtn" onclick="movePage('/voters/voting')">다음</button>
+	<div th:replace="gnb/footer :: footer"></div>
+</body>
+</html>

@@ -18,7 +18,7 @@ public class VotingController {
   @GetMapping("/voteOverview")
   public String moveVoteOverviewPage() {
 
-    return "common/voteOverview";
+    return "voters/voterVoteOverview";
 
   }
   
@@ -32,7 +32,7 @@ public class VotingController {
   @GetMapping("/voteResult")
   public String moveVoteResultPage() {
     
-    return "common/voteResult";
+    return "voters/voterVoteResult";
     
   }
 }

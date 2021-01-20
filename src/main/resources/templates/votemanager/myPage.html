@@ -7,10 +7,11 @@
 <link rel="stylesheet" th:href="@{/css/subPage.css}">
 <title>투표 관리자 - 마이페이지</title>
 <script defer th:src="@{/javascript/subPage.js}"></script>
+<script defer th:src="@{/javascript/movePage.js}"></script>
 </head>
 <body>
 	<div th:replace="gnb/header :: header(true)"></div>
-	<div th:replace="gnb/navGnb :: voteManagerGnb"></div>
+	<div th:replace="gnb/navGnb :: voteManagerGnb(activeNav='myPage')"></div>
 
 	<section>
 		<div th:replace="gnb/pageTitle :: myPageTitle"></div>

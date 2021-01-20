@@ -37,15 +37,23 @@
 		<div th:replace="common/voteResult"></div>
 	</div>
 </th:block>
+<th:block th:fragment="voteResult2">
+	<div th:replace="common/voteResult"></div>
+</th:block>
 <th:block th:fragment="voteOverview">
 	<div id="subPage" style="display: none;">
+		<div th:replace="common/voteOverview"></div>
+	</div>
+</th:block>
+<th:block th:fragment="voteOverview2">
+	<div id="subPage">
 		<div th:replace="common/voteOverview"></div>
 	</div>
 </th:block>
 <th:block th:fragment="applyForm">
 	<div id="subPage" style="display: none;">
 		<!DOCTYPE html>
-<html>
+		<html>
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" th:href="@{/css/commonStyle.css}">
@@ -117,7 +125,7 @@
 
 	</section>
 </body>
-</html>
+		</html>
 	</div>
 </th:block>
 </html>

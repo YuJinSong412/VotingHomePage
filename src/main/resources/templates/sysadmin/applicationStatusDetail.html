@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div th:replace="gnb/header :: header(true)"></div>
-	<div th:replace="gnb/navGnb :: sysAdminGnb"></div>
+	<div th:replace="gnb/navGnb :: sysAdminGnb(activeNav='application')"></div>
 
 	<section>
 		<div th:replace="gnb/pageTitle :: applicationStatusTitle"></div>

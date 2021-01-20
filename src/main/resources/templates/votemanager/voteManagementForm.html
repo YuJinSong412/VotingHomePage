@@ -5,10 +5,12 @@
 <link rel="stylesheet" th:href="@{/css/commonStyle.css}">
 <link rel="stylesheet" th:href="@{/css/applicationStatusStyle.css}">
 <title>투표 관리 화면</title>
+<script defer th:src="@{/javascript/subPage.js}"></script>
+<script defer th:src="@{/javascript/movePage.js}"></script>
 </head>
 <body>
 	<div th:replace="gnb/header :: header(true)"></div>
-	<div th:replace="gnb/navGnb :: voteManagerGnb"></div>
+	<div th:replace="gnb/navGnb :: voteManagerGnb(activeNav='voteManagementForm')"></div>
 
 	<section>
 		<div th:replace="gnb/pageTitle :: voteManagementFormTitle"></div>

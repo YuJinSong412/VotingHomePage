@@ -283,3 +283,16 @@ article .authenticationBox {
 	font-size: 18px;
 	font-family: 'MaplestoryOTFLight';
 }
+
+.voterVoteOverviewBtn, .voterVoteResultBtn{
+	position: absolute;
+	right: 20px;
+	bottom:80px;
+	background-color: black;
+	font-size: 20px;
+	font-family: 'MaplestoryOTFLight';
+	border-radius: 7px;
+	width: 150px;
+	height:60px;
+	color:white;
+}

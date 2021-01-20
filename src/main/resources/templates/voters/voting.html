@@ -6,10 +6,11 @@
 <link rel="stylesheet" th:href="@{/css/applicationStatusStyle.css}">
 <link rel="stylesheet" th:href="@{/css/votingStyle.css}">
 <title>투표하기 화면</title>
+<script defer th:src="@{/javascript/movePage.js}"></script>
 </head>
 <body>
 	<div th:replace="gnb/header :: header(false)"></div>
-	<div th:replace="gnb/navGnb :: votersGnb"></div>
+	<div th:replace="gnb/navGnb :: votersGnb(activeNav='authentication')"></div>
 	
 	<section>
 		<div th:replace="gnb/pageTitle :: votingTitle"></div>
@@ -30,7 +31,7 @@
 					<div></div>
 				</div>
 				<div class="voteSubmit">
-					<button type="button" class="voteCompleted">투표 완료</button>
+					<button type="button" class="voteCompleted" onclick="movePage('/voters/voteResult')">투표 완료</button>
 				</div>
 			</form>
 		</article>

@@ -7,10 +7,11 @@
 <link rel="stylesheet" th:href="@{/css/subPage.css}">
 <title>투표 현황 화면</title>
 <script defer th:src="@{/javascript/subPage.js}"></script>
+<script defer th:src="@{/javascript/movePage.js}"></script>
 </head>
 <body>
 	<div th:replace="gnb/header :: header(true)"></div>
-	<div th:replace="gnb/navGnb :: sysAdminGnb"></div>
+	<div th:replace="gnb/navGnb :: sysAdminGnb(activeNav='votingStatus')"></div>
 
 	<section>
 		<div th:replace="gnb/pageTitle :: votingStatusTitle"></div>

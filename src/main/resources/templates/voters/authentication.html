@@ -5,10 +5,11 @@
 <link rel="stylesheet"th:href="@{/css/commonStyle.css}">
 <link rel="stylesheet"th:href="@{/css/applicationStatusStyle.css}">
 <title>투표자 인증 화면</title>
+<script defer th:src="@{/javascript/movePage.js}"></script>
 </head>
 <body>
 	<div th:replace="gnb/header :: header(false)"></div>
-	<div th:replace="gnb/navGnb :: votersGnb"></div>
+	<div th:replace="gnb/navGnb :: votersGnb(activeNav='authentication')"></div>
 
 	<section>
 		<div th:replace="gnb/pageTitle :: authenticationTitle"></div>
@@ -28,7 +29,7 @@
 							<td><input type="text" class="tel"></td>
 						</tr>
 					</table>
-					<button type="button" class="authenBtn">인증</button>
+					<button type="button" class="authenBtn" onclick="movePage('/voters/voteOverview')">인증</button>
 				</form>
 			</div>
 		</article>

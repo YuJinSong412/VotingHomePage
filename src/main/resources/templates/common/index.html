@@ -5,6 +5,7 @@
 <link rel="stylesheet" th:href="@{/css/commonStyle.css}">
 <link rel="stylesheet" th:href="@{/css/indexAndLoginStyle.css}">
 <title>메인화면</title>
+<script defer th:src="@{/javascript/movePage.js}"></script>
 </head>
 <body>
 	<div th:replace="gnb/header :: header(true)"></div>
@@ -14,9 +15,9 @@
 		<div th:replace="gnb/imgCommon :: siteIcon"></div>
 		<h3 class="apartEvoteTitle">아파트 e투표</h3>
 		<div class="movePage">
-			<button class="applyFormBtn"><a href="applyForm">이용신청서 작성</a></button>
+			<button class="applyFormBtn" onclick="movePage('/applyForm')">이용신청서 작성</button>
 			<br>
-			<button class="voteBtn"><a th:href="@{/voters/authentication}">투표하기</a></button>
+			<button class="voteBtn" onclick="movePage('/voters/authentication')">투표하기</button>
 		</div>
 
 	</section>
