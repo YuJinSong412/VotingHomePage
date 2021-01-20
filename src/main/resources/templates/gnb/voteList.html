@@ -32,21 +32,13 @@
 		</table>
 	</form>
 </th:block>
-<th:block th:fragment="voteResult">
-	<div id="subPage" style="display: none;">
+<th:block th:fragment="voteResult(show)">
+	<div id="subPage" th:style="${show ? 'display: block' : 'display : none'}">
 		<div th:replace="common/voteResult"></div>
 	</div>
 </th:block>
-<th:block th:fragment="voteResult2">
-	<div th:replace="common/voteResult"></div>
-</th:block>
-<th:block th:fragment="voteOverview">
-	<div id="subPage" style="display: none;">
-		<div th:replace="common/voteOverview"></div>
-	</div>
-</th:block>
-<th:block th:fragment="voteOverview2">
-	<div id="subPage">
+<th:block th:fragment="voteOverview(show)">
+	<div id="subPage" th:style="${show ? 'display: block' : 'display : none'}">
 		<div th:replace="common/voteOverview"></div>
 	</div>
 </th:block>

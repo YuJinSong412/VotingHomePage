@@ -7,21 +7,46 @@
 </th:block>
 <th:block th:fragment="sysAdminGnb(activeNav)">
 	<nav>
-		<button type="button" th:class="${activeNav == 'application'} ? 'adminNavBtn1 active' : 'adminNavBtn1'" onclick="movePage('/sysadmin/applicationStatus')">신청서 현황</button>
-		<button type="button" th:class="${activeNav == 'votingStatus'} ? 'adminNavBtn2 active' : 'adminNavBtn2'" onclick="movePage('/sysadmin/votingStatus')">투표 현황</button>
+		<button type="button" class="adminNavBtn1"
+			th:class="${activeNav == 'application'} ? 'active' : ''"
+			onclick="movePage('/sysadmin/applicationStatus')">신청서 현황</button>
+		<button type="button" class="adminNavBtn2"
+			th:class="${activeNav == 'votingStatus'} ? 'active' : ''"
+			onclick="movePage('/sysadmin/votingStatus')">투표 현황</button>
 	</nav>
 </th:block>
 <th:block th:fragment="voteManagerGnb(activeNav)">
 	<nav>
-		<button type="button" th:class="${activeNav == 'myPage'} ? 'managerNavBtn1 active' : 'managerNavBtn1'" onclick="movePage('/votemanager/myPage')">마이페이지</button>
-		<button type="button" th:class="${activeNav == 'voteForm'} ? 'managerNavBtn2 active' : 'managerNavBtn2'" onclick="movePage('/votemanager/voteForm')">투표 만들기</button>
-		<button type="button" th:class="${activeNav == 'voteManagementForm'} ? 'managerNavBtn3 active' : 'managerNavBtn3'" onclick="movePage('/votemanager/voteManagementForm')">투표 관리</button>
+		<button type="button" class="managerNavBtn1"
+			th:class="${activeNav == 'myPage'} ? 'active' : ''"
+			onclick="movePage('/votemanager/myPage')">마이페이지</button>
+		<button type="button" class="managerNavBtn2"
+			th:class="${activeNav == 'voteForm'} ? 'active' : ''"
+			onclick="movePage('/votemanager/voteForm')">투표 만들기</button>
+		<button type="button" class="managerNavBtn3"
+			th:class="${activeNav == 'voteManagementForm'} ? 'active' : ''"
+			onclick="movePage('/votemanager/voteManagementForm')">투표 관리</button>
 	</nav>
 </th:block>
 <th:block th:fragment="votersGnb(activeNav)">
 	<nav>
-		<button type="button" th:class="${activeNav == 'authentication'} ? 'voterNavBtn1 active' : 'voterNavBtn1'" onclick="movePage('/voters/authentication')">투표하기</button>
-		<button type="button" th:class="${activeNav == 'voteResult'} ? 'voterNavBtn2 active' : 'voterNavBtn2'" onclick="movePage('/voters/voteResult')">투표 결과 확인</button>
+		<button type="button" class="voterNavBtn1"
+			th:class="${activeNav == 'authentication'} ? 'active' : ''"
+			onclick="movePage('/voters/authentication')">투표하기</button>
+		<th:block th:if="${activeNav == 'voteResult'}">
+			<button type="button" class="voterNavBtn2 active">투표 결과 확인</button>
+			<!--/* 			<button type="button" class="voterNavBtn2"
+				th:class="${activeNav == 'voteResult'} ? 'active' : ''"
+				th:disabled="${activeNav == 'authentication'} ? true : false"
+				th:style="${activeNav == 'authentication'} ? 'cursor: not-allowed' : 'cursor: not-allowed'"
+				onclick="movePage('/voters/voteResult')">투표 결과 확인</button>
+				 */-->
+		</th:block>
+		<th:block th:if="${activeNav == 'authentication'}">
+			<button type="button" class="voterNavBtn2" disabled="true"
+				style="cursor: not-allowed;"
+				onclick="movePage('/voters/voteResult')">투표 결과 확인</button>
+		</th:block>
 	</nav>
 </th:block>
 </html>

@@ -10,7 +10,7 @@
 <body>
 	<div th:replace="gnb/header :: header(false)"></div>
 	<div th:replace="gnb/navGnb :: votersGnb(activeNav='voteResult')"></div>
-	<div th:replace="gnb/voteList :: voteResult2"></div>
+	<div th:replace="gnb/voteList :: voteResult(true)"></div>
 	<button type="button" class="voterVoteResultBtn" onclick="movePage('/')">종료</button>
 	<div th:replace="gnb/footer :: footer"></div>
 </body>

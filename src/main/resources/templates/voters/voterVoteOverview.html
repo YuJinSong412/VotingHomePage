@@ -10,7 +10,7 @@
 <body>
 	<div th:replace="gnb/header :: header(false)"></div>
 	<div th:replace="gnb/navGnb :: votersGnb(activeNav='authentication')"></div>
-	<div th:replace="gnb/voteList :: voteOverview2"></div>
+	<div th:replace="gnb/voteList :: voteOverview(true)"></div>
 	<button type="button" class="voterVoteOverviewBtn" onclick="movePage('/voters/voting')">다음</button>
 	<div th:replace="gnb/footer :: footer"></div>
 </body>
