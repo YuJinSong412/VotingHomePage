@@ -68,7 +68,7 @@ article form input {
 	width: 100%;
 }
 
-article form #votetime {
+article form #voteStartTime, #voteEndTime {
 	font-size: 20px;
 	font-family: 'MaplestoryOTFLight';
 }

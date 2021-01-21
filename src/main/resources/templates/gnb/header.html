@@ -3,7 +3,7 @@
 	<header>
 		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="50px;"
 			height="50px;">
-		<h1 onclick="movePage('/')">한국전자투표</h1>
+		<h1 onclick="movePage('/')" style="cursor: pointer;">한국전자투표</h1>
 		<a th:if="${loginPage}" th:href="@{/login}" type="button"
 			class="loginBtn">로그인</a>
 		<!--

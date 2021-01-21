@@ -7,4 +7,7 @@ import com.kev.votinghomepage.dto.VotingManagerDTO;
 public interface VotingManagerRepository extends JpaRepository<VotingManagerDTO, Integer > {
 
   Optional<VotingManagerDTO> findByManagerIdAndManagerPw(String managerId, String managerPw);
+  
+  
+  
 }

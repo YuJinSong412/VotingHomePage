@@ -5,6 +5,7 @@
 <link rel="stylesheet" th:href="@{/css/commonStyle.css}">
 <link rel="stylesheet" th:href="@{/css/indexAndLoginStyle.css}">
 <title>로그인 화면</title>
+<script defer th:src="@{/javascript/movePage.js}"></script>
 </head>
 <body>
 	<div th:replace="gnb/header :: header(false)"></div>
@@ -13,7 +14,7 @@
 	<section>
 		<div th:replace="gnb/imgCommon :: siteIcon"></div>
 		<h3 class="sectionloginTitle">로그인</h3>
-		<form class="loginForm" method="GET" action="/login.do">
+		<form class="loginForm" method="POST" action="/login.do">
 			<input type="text" id="loginId" name="loginId" value=""
 				placeholder="ID"><br> <input type="text" id="loginPW"
 				name="loginPW" value="" placeholder="PW"><br>
