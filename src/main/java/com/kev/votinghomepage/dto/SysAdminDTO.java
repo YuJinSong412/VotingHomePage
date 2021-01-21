@@ -21,7 +21,7 @@ public class SysAdminDTO {
   @Column(name = "ADMIN_ID")
   private String adminID;
 
-  @Column(name = "ADMMIN_PW")
+  @Column(name = "ADMIN_PW")
   private String adminPW;
 
 }
