@@ -24,6 +24,10 @@ body {
 	font-family: 'MaplestoryOTFLight';
 }
 
+button{
+	cursor: pointer;
+}
+
 header {
 	height: 100px;
 	display: flex;
