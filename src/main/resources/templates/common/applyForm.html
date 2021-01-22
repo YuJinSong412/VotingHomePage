@@ -6,7 +6,7 @@
 <link rel="stylesheet" th:href="@{/css/applyFormStyle.css}">
 <title>이용신청서 작성화면</title>
 <script defer th:src="@{/javascript/movePage.js}"></script>
-<script defer th:src="@{/javascript/ex.js}"></script>
+<script defer th:src="@{/javascript/applyForm.js}"></script>
 </head>
 <body>
 	<div th:replace="gnb/header :: header(true)"></div>
@@ -16,7 +16,7 @@
 		<div th:replace="gnb/pageTitle :: applyFormTitle"></div>
 
 		<article>
-			<form method="POST" action="/applyForm.do">
+			<form method="POST" action="/applyForm.do" id="main-form">
 				<table class="apartInfo">
 					<caption>1. 아파트 정보</caption>
 					<tr>
@@ -71,7 +71,7 @@
 					</tr>
 				</table>
 				<div class="applyButton">
-					<button type="submit" value="신청하기" onclick="my(${id})">신청하기</button> 
+					<button type="submit" value="신청하기">신청하기</button> 
 					<!-- 나중에 함수로 따로 빼주기-->
 				</div>
 
