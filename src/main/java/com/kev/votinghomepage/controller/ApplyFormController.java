@@ -25,7 +25,7 @@ public class ApplyFormController {
   }
 
   @PostMapping("/applyForm.do")
-  public ResponseEntity<VotingManagerDTO> applyFormPage(HttpServletRequest req, Model model) {
+  public ResponseEntity<VotingManagerDTO> applyFormPage(HttpServletRequest req) {
 
     RandomOut randomOut = new RandomOut();
     String managerId = randomOut.getRandomStr(4);
@@ -39,9 +39,6 @@ public class ApplyFormController {
     votingManagerDTO.setManagerPw(managerPw);
     votingManagerRepo.save(votingManagerDTO);
     
-    
-    model.addAttribute("id", 200);
-    model.addAttribute("pw", managerPw);
     
     return ResponseEntity.ok(votingManagerDTO);
 
