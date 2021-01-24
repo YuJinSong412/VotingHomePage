@@ -42,12 +42,14 @@ public class LoginController {
       VotingManagerDTO result2 = dto2.orElseGet(() -> new VotingManagerDTO());
 
       if (loginId.equals(result2.getManagerId()) && loginPw.equals(result2.getManagerPw())) {
-        return "votemanager/myPage";
+        req.getSession().setAttribute("managerSeq", result2.getManagerSeq());
+        
+        return "redirect:/votemanager/myPage";
       } else {
-        return "common/index";
+        return "redirect:/common/index";
       }
     } else {
-      return "sysadmin/applicationStatusDetail";
+      return "redirect:/sysadmin/applicationStatusDetail";
     }
   }
 
