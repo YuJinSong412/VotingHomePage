@@ -6,12 +6,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+import com.kev.votinghomepage.ApplicationDate;
 import com.kev.votinghomepage.RandomOut;
 import com.kev.votinghomepage.dao.ApplicationRepository;
 import com.kev.votinghomepage.dao.VoteRepository;
+import com.kev.votinghomepage.dao.VotingHistoryRepository;
 import com.kev.votinghomepage.dao.VotingManagerRepository;
 import com.kev.votinghomepage.dto.ApplicationDTO;
 import com.kev.votinghomepage.dto.VoteDTO;
+import com.kev.votinghomepage.dto.VotingHistoryDTO;
 import com.kev.votinghomepage.dto.VotingManagerDTO;
 import com.kev.votinghomepage.request.ApplyFormRequest;
 
@@ -26,6 +29,9 @@ public class ApplyFormController {
   
   @Autowired
   public VoteRepository voteRepo;
+  
+  @Autowired
+  public VotingHistoryRepository votingHistoryRepo;
 
   @GetMapping("/applyForm")
   public String moveApplyForm() {
@@ -62,7 +68,17 @@ public class ApplyFormController {
     votingManagerDTO.setManagerPHNum(req.getManagerTel());
     votingManagerDTO.setManagerId(managerId);
     votingManagerDTO.setManagerPw(managerPw);
-    votingManagerRepo.save(votingManagerDTO);
+    votingManagerDTO = votingManagerRepo.save(votingManagerDTO);
+    
+    ApplicationDate appDate = new ApplicationDate();
+    String dateStr = appDate.getApplicationDate();
+    
+    VotingHistoryDTO votingHistoryDTO = new VotingHistoryDTO();
+    votingHistoryDTO.setManagerSeq(votingManagerDTO.getManagerSeq());
+    votingHistoryDTO.setVoteSeq(voteDTO.getVoteSeq());
+    votingHistoryDTO.setRegDate(dateStr);
+    votingHistoryRepo.save(votingHistoryDTO);
+    
     
     return votingManagerDTO;
 

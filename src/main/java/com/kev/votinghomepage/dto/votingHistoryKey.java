@@ -14,9 +14,9 @@ public class votingHistoryKey implements Serializable{
   
   @Id
   @Column(name = "MANAGER_SEQ")
-  private int managerSeq;
+  private Integer managerSeq;
 
   @Id
   @Column(name = "VOTE_SEQ")
-  private String voteSeq;
+  private Integer voteSeq;
 }

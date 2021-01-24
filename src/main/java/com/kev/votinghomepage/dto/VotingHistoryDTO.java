@@ -15,11 +15,11 @@ public class VotingHistoryDTO{
 
   @Id
   @Column(name = "MANAGER_SEQ")
-  private int managerSeq;
+  private Integer managerSeq;
 
   @Id
   @Column(name = "VOTE_SEQ")
-  private String voteSeq;
+  private Integer voteSeq;
 
   @Column(name = "REG_DATE")
   private String regDate;

@@ -11,6 +11,8 @@ async function handleFormSubmit(event) {
 		console.log({ responseData });
 		
 		alert(`아이디는 : ${responseData.managerId}\n 비번 : ${responseData.managerPw}\n 로그인하여 마이페이지에서 신청서 현황을 확인하세요.`);
+		
+		location.href="/";
 	} catch (error) {
 		console.error(error);
 	}

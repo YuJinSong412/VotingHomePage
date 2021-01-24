@@ -47,7 +47,7 @@ public class LoginController {
         return "common/index";
       }
     } else {
-      return "sysadmin/applicationStatus";
+      return "sysadmin/applicationStatusDetail";
     }
   }
 
