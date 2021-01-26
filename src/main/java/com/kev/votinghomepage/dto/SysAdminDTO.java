@@ -13,7 +13,7 @@ public class SysAdminDTO {
 
   @Id
   @Column(name = "ADMIN_SEQ")
-  private int adminSeq;
+  private Integer adminSeq;
 
   @Column(name = "ADMIN_CATG")
   private String adminCatg;

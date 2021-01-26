@@ -2,6 +2,8 @@ package com.kev.votinghomepage.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import lombok.Data;
@@ -12,11 +14,12 @@ import lombok.Data;
 public class VoteItemDTO {
   
   @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "VOTE_ITEM_SEQ")
-  private int voteItemSeq;
+  private Integer voteItemSeq;
 
   @Column(name = "VOTE_SEQ")
-  private String voteItem;
+  private Integer voteSeq;
 
   @Column(name = "VOTE_ITEM_NAME")
   private String voteItemName;

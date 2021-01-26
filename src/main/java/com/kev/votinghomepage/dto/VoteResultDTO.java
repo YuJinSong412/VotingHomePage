@@ -13,20 +13,20 @@ public class VoteResultDTO {
   
   @Id
   @Column(name = "VOTER_RESULT_SEQ")
-  private int voterResultSeq;
+  private Integer voterResultSeq;
 
   @Column(name = "VOTE_SEQ")
-  private String voteSeq;
+  private Integer voteSeq;
 
   @Column(name = "VOTE_ITEM_SEQ")
-  private String voterItemSeq;
+  private Integer voterItemSeq;
 
   @Column(name = "CAND_SEQ")
-  private String candSeq;
+  private Integer candSeq;
   
   @Column(name = "VOTE_VALUE")
   private String voteValue;
 
   @Column(name = "PARCPANT_SEQ")
-  private String parcpantSeq;
+  private Integer parcpantSeq;
 }

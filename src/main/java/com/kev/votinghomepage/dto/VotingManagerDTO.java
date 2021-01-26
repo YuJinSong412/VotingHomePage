@@ -16,7 +16,7 @@ public class VotingManagerDTO {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "MANAGER_SEQ")
-  private int managerSeq;
+  private Integer managerSeq;
 
   @Column(name = "PH_NUM")
   private String managerPHNum;

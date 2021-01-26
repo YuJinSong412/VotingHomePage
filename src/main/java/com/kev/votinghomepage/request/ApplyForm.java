@@ -1,9 +1,14 @@
 package com.kev.votinghomepage.request;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 @Data
-public class ApplyFormRequest {
+@AllArgsConstructor
+@NoArgsConstructor
+public class ApplyForm {
   
   private String apartName;
   
@@ -19,7 +24,7 @@ public class ApplyFormRequest {
   
   private String voteTitle;
   
-  private String esmVoter;
+  private Integer esmVoter;
   
   private String voteStartTime;
   

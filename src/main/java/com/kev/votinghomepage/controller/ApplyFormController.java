@@ -16,7 +16,8 @@ import com.kev.votinghomepage.dto.ApplicationDTO;
 import com.kev.votinghomepage.dto.VoteDTO;
 import com.kev.votinghomepage.dto.VotingHistoryDTO;
 import com.kev.votinghomepage.dto.VotingManagerDTO;
-import com.kev.votinghomepage.request.ApplyFormRequest;
+import com.kev.votinghomepage.enums.VoteStatusCode;
+import com.kev.votinghomepage.request.ApplyForm;
 
 @Controller
 public class ApplyFormController {
@@ -41,7 +42,7 @@ public class ApplyFormController {
   }
 
   @PostMapping("/applyForm.do")
-  public @ResponseBody VotingManagerDTO applyFormPage(@RequestBody ApplyFormRequest req) {
+  public @ResponseBody VotingManagerDTO applyFormPage(@RequestBody ApplyForm req) {
 
     RandomOut randomOut = new RandomOut();
     String managerId = randomOut.getRandomStr(4);
@@ -52,6 +53,7 @@ public class ApplyFormController {
     voteDTO.setEsmVoter(req.getEsmVoter());
     voteDTO.setVoteStartDate(req.getVoteStartTime());
     voteDTO.setVoteEndDate(req.getVoteEndTime());
+    voteDTO.setVoteStateCd(VoteStatusCode.A.getCodeNum());
     voteDTO = voteRepo.save(voteDTO);
     
     ApplicationDTO appDTO = new ApplicationDTO();

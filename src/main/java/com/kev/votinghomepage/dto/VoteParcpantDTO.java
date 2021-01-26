@@ -13,13 +13,13 @@ public class VoteParcpantDTO {
   
   @Id
   @Column(name = "PARCPANT_SEQ")
-  private int parcpantSeq;
+  private Integer parcpantSeq;
 
   @Column(name = "VOTE_SEQ")
-  private String voteSeq;
+  private Integer voteSeq;
 
   @Column(name = "VOTER_SEQ")
-  private String voterSeq;
+  private Integer voterSeq;
 
   @Column(name = "VOTE_REG_DATE")
   private String voteRegDate;

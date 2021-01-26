@@ -15,19 +15,19 @@
 </th:block>
 <th:block th:fragment="listItem(adminButton)">
 	<form method="GET" action="/login/actionLogin">
-		<table class="appStatusList">
+		<table class="appStatusList" th:each="item, idx : ${voteList}">
 			<tr>
-				<td th:text="${apartName}">송여신</td>
-				<td>01-04 11:00 ~ 01-14 15:00</td>
+				<td th:text="${item.apartName}">아파트명</td>
+				<td th:text="|${item.voteStartDate} ~ ${item.voteEndDate}|">날짜</td>
 				<td rowspan="2" style="font-weight: bold;">대기
 					<button type="button" class="appDetail" id="appDetail"
 						onclick="myFunction()">이력</button>
-					<button th:if="${adminButton}" type="button" class="appApprove">승인</button>
+					<button th:if="${adminButton}" type="button" class="appApprove" th:onclick="|changeStatus('${item.voteSeq}')|">승인</button>
 				</td>
 			</tr>
 			<tr>
-				<td>테스트 선거</td>
-				<td>10명</td>
+				<td th:text="${item.voteTitle}">투표 제목</td>
+				<td th:text="${item.esmVoter}">투표자 수</td>
 			</tr>
 		</table>
 	</form>
@@ -57,58 +57,56 @@
 		<div th:replace="gnb/pageTitle :: applyFormTitle"></div>
 
 		<article>
-			<form method="GET" action="/login/actionLogin">
-				<table class="apartInfo">
+			<form method="GET">
+				<table class="apartInfo" th:each="item, idx : ${applyFormList}">
 					<caption>1. 아파트 정보</caption>
 					<tr>
 						<th>아파트명</th>
-						<td><input type="text" id="loginId" name="loginId" value=""></td>
+						<td th:text="${item.apartName}"></td>
 					</tr>
 					<tr>
 						<th>아파트 연락처</th>
-						<td><input type="text" id="loginId" name="loginId" value=""></td>
+						<td th:text="${item.apartTel}"></td>
 					</tr>
 					<tr>
 						<th>사업자 등록번호</th>
-						<td><input type="text" id="loginId" name="loginId" value=""></td>
+						<td th:text="${item.bizLcsNum}"></td>
 					</tr>
 				</table>
 
-				<table class="managerInfo">
+				<table class="managerInfo" th:each="item, idx : ${applyFormList}">
 					<caption>2. 관리자 정보</caption>
 					<tr>
 						<th>관리자 성명</th>
-						<td><input type="text" id="loginId" name="loginId" value=""></td>
+						<td th:text="${item.managerName}"></td>
 					</tr>
 					<tr>
 						<th>관리자 직위</th>
-						<td><input type="text" id="loginId" name="loginId" value=""></td>
+						<td th:text="${item.managerPosition}"></td>
 					</tr>
 					<tr>
 						<th>관리자 연락처 (하이픈(-)포함)</th>
-						<td><input type="text" id="loginId" name="loginId" value=""></td>
+						<td th:text="${item.managerTel}"></td>
 					</tr>
 				</table>
 
-				<table class="voteInfo">
+				<table class="voteInfo" th:each="item, idx : ${applyFormList}">
 					<caption>3. 투표 정보</caption>
 					<tr>
 						<th>투표 제목 (대표 안건명)</th>
-						<td><input type="text" id="loginId" name="loginId" value=""></td>
+						<td th:text="${item.voteTitle}"></td>
 					</tr>
 					<tr>
 						<th>예상 투표자 수</th>
-						<td><input type="text" id="loginId" name="loginId" value=""></td>
+						<td th:text="${item.esmVoter}"></td>
 					</tr>
 					<tr>
 						<th>투표 시작</th>
-						<td><input type="datetime-local" id="votetime"
-							name="votetime"></td>
+						<td th:text="${item.voteStartTime}"></td>
 					</tr>
 					<tr>
 						<th>투표 종료</th>
-						<td><input type="datetime-local" id="votetime"
-							name="votetime"></td>
+						<td th:text="${item.voteEndTime}"></td>
 					</tr>
 				</table>
 
