@@ -40,16 +40,16 @@ public class voteManagerController {
 
   @Autowired
   public ApplicationRepository applicationRepo;
-  
+
   @Autowired
   public VoterRepository voterRepo;
-  
+
   @Autowired
   public VoteItemRepository voteItemRepo;
-  
+
   @Autowired
   public CandidateRepository candRepo;
-  
+
   @GetMapping("/myPage")
   public String moveMypage(HttpServletRequest req, Model model) {
 
@@ -102,7 +102,8 @@ public class voteManagerController {
   }
 
   @PostMapping("/parseVoter")
-  public @ResponseBody Void parseVoter(@RequestParam("myFile") MultipartFile file, HttpServletRequest req) throws IOException {
+  public @ResponseBody Void parseVoter(@RequestParam("myFile") MultipartFile file,
+      HttpServletRequest req) throws IOException {
 
     String extension = FilenameUtils.getExtension(file.getOriginalFilename());
     if (!extension.equals("xls")) {
@@ -110,10 +111,10 @@ public class voteManagerController {
     }
     Workbook workbook = new HSSFWorkbook(file.getInputStream());
     Sheet worksheet = workbook.getSheetAt(0);
-    
+
     Integer managerSeq = (Integer) (req.getSession().getAttribute("managerSeq"));
     List<VoteListDTO> voteList = voteRepo.getVoteList(managerSeq);
-    
+
     for (int i = 1; i < worksheet.getPhysicalNumberOfRows(); i++) {
       Row row = worksheet.getRow(i);
       if (row.getCell(0) == null) {
@@ -124,32 +125,32 @@ public class voteManagerController {
       voterDTO.setVoteName(row.getCell(0).getStringCellValue());
       voterDTO.setPhoneNum(row.getCell(1).getStringCellValue());
       voterDTO.setVoterCont(row.getCell(2).getStringCellValue());
-      voterDTO.setVoteSeq(voteList.get(0).getVoteSeq()); 
+      voterDTO.setVoteSeq(voteList.get(0).getVoteSeq());
       voterRepo.save(voterDTO);
 
     }
     return null;
   }
-  
+
   @PostMapping("/makeVote.do")
-  public String makeVote(HttpServletRequest req, VoteItem request) {  //,  VoteItem request
-    
+  public String makeVote(HttpServletRequest req, VoteItem request) { // , VoteItem request
+
     Integer managerSeq = (Integer) (req.getSession().getAttribute("managerSeq"));
     List<VoteListDTO> voteList = voteRepo.getVoteList(managerSeq);
-    
+
     VoteItemDTO voteItemDTO = new VoteItemDTO();
     voteItemDTO.setVoteItemName(request.getVoteItemTitle());
     voteItemDTO.setVoteItemType("찬반 투표");
     voteItemDTO.setVoteSeq(voteList.get(0).getVoteSeq());
     voteItemDTO = voteItemRepo.save(voteItemDTO);
-    
+
     CandidateDTO candDTO = new CandidateDTO();
     candDTO.setVoteSeq(voteList.get(0).getVoteSeq());
     candDTO.setVoteItemSeq(voteItemDTO.getVoteItemSeq());
     candDTO.setCandName(request.getCandidateName());
     candRepo.save(candDTO);
-    
-    
+
+
     return "redirect:/votemanager/voteManagementForm";
   }
 

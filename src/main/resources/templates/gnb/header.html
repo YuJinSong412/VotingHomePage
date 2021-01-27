@@ -3,20 +3,41 @@
 	<header>
 		<img th:src="@{/images/voting.png}" alt="한국전자투표 아이콘" width="50px;"
 			height="50px;">
+
 		<h1 onclick="movePage('/')" style="cursor: pointer;">한국전자투표</h1>
-		<a th:if="${loginPage}" th:href="@{/login}" type="button"
-			class="loginBtn">로그인</a>
-		<!--
-		<th:block th:if=${successLogin}>
-			<a th:if="${loginPage}" th:href="@{/login}" type="button"
-				class="loginBtn">로그아웃</a>
+		<!--  
+		<th:block th:if="${session.sysAdminId == null}">
+			<h1 onclick="movePage('/')" style="cursor: pointer;">한국전자투표</h1>
 		</th:block>
 
-		<th:block th:if=${unsuccessLogin}>
+		<th:block th:if="${session.sysAdminId}">
+			<h1 onclick="movePage('/sysadmin/applicationStatusDetail')"
+				style="cursor: pointer;">한국전자투표</h1>
+		</th:block>
+
+		<th:block th:if="${session.managerName}">
+			<h1 onclick="movePage('/votemanager/myPage')"
+				style="cursor: pointer;">한국전자투표</h1>
+		</th:block>
+-->
+<!-- 
+		<th:block th:if="${session.managerName != null}">
+			<a th:if="${loginPage}" th:href="@{/logout}" type="button"
+				class="loginBtn">로그아웃</a>
+			<div th:text="${session.managerName}">John Doe</div>
+		</th:block>
+ -->
+		<th:block th:if="${session.sysAdminId != null}">
+			<a th:if="${loginPage}" th:href="@{/logout}" type="button"
+				class="loginBtn">로그아웃</a>
+			<div th:text="${session.sysAdminId}">John Doe</div>
+		</th:block>
+
+		<th:block th:if="${session.sysAdminId == null}">
 			<a th:if="${loginPage}" th:href="@{/login}" type="button"
 				class="loginBtn">로그인</a>
 		</th:block>
--->
+
 	</header>
 </th:block>
 </html>

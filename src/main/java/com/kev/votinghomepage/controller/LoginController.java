@@ -43,12 +43,17 @@ public class LoginController {
 
       if (loginId.equals(result2.getManagerId()) && loginPw.equals(result2.getManagerPw())) {
         req.getSession().setAttribute("managerSeq", result2.getManagerSeq());
+        req.getSession().setAttribute("managerName", result2.getManagerName());
         
         return "redirect:/votemanager/myPage";
       } else {
         return "redirect:/common/index";
       }
     } else {
+      
+      req.getSession().setAttribute("sysAdminSeq" , result.getAdminSeq());
+      req.getSession().setAttribute("sysAdminId", result.getAdminID());
+      
       return "redirect:/sysadmin/applicationStatusDetail";
     }
   }

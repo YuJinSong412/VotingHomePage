@@ -21,8 +21,9 @@
 				<td th:text="|${item.voteStartDate} ~ ${item.voteEndDate}|">날짜</td>
 				<td rowspan="2" style="font-weight: bold;">대기
 					<button type="button" class="appDetail" id="appDetail"
-						onclick="myFunction()">이력</button>
-					<button th:if="${adminButton}" type="button" class="appApprove" th:onclick="|changeStatus('${item.voteSeq}')|">승인</button>
+						th:onclick="|myFunction(${idx.index})|">이력</button>
+					<button th:if="${adminButton}" type="button" class="appApprove"
+						th:onclick="|changeStatus('${item.voteSeq}')|">승인</button>
 				</td>
 			</tr>
 			<tr>
@@ -33,12 +34,14 @@
 	</form>
 </th:block>
 <th:block th:fragment="voteResult(show)">
-	<div id="subPage" th:style="${show ? 'display: block' : 'display : none'}">
+	<div id="subPage"
+		th:style="${show ? 'display: block' : 'display : none'}">
 		<div th:replace="common/voteResult"></div>
 	</div>
 </th:block>
 <th:block th:fragment="voteOverview(show)">
-	<div id="subPage" th:style="${show ? 'display: block' : 'display : none'}">
+	<div id="subPage"
+		th:style="${show ? 'display: block' : 'display : none'}">
 		<div th:replace="common/voteOverview"></div>
 	</div>
 </th:block>
@@ -57,60 +60,61 @@
 		<div th:replace="gnb/pageTitle :: applyFormTitle"></div>
 
 		<article>
-			<form method="GET">
-				<table class="apartInfo" th:each="item, idx : ${applyFormList}">
-					<caption>1. 아파트 정보</caption>
-					<tr>
-						<th>아파트명</th>
-						<td th:text="${item.apartName}"></td>
-					</tr>
-					<tr>
-						<th>아파트 연락처</th>
-						<td th:text="${item.apartTel}"></td>
-					</tr>
-					<tr>
-						<th>사업자 등록번호</th>
-						<td th:text="${item.bizLcsNum}"></td>
-					</tr>
-				</table>
+			<div th:each="item, idx : ${applyFormList}">
+				<form th:id="'subPage_' + ${idx.index}" style="display: none;">
+					<table class="apartInfo">
+						<caption>1. 아파트 정보</caption>
+						<tr>
+							<th>아파트명</th>
+							<td th:text="${item.apartName}"></td>
+						</tr>
+						<tr>
+							<th>아파트 연락처</th>
+							<td th:text="${item.apartTel}"></td>
+						</tr>
+						<tr>
+							<th>사업자 등록번호</th>
+							<td th:text="${item.bizLcsNum}"></td>
+						</tr>
+					</table>
 
-				<table class="managerInfo" th:each="item, idx : ${applyFormList}">
-					<caption>2. 관리자 정보</caption>
-					<tr>
-						<th>관리자 성명</th>
-						<td th:text="${item.managerName}"></td>
-					</tr>
-					<tr>
-						<th>관리자 직위</th>
-						<td th:text="${item.managerPosition}"></td>
-					</tr>
-					<tr>
-						<th>관리자 연락처 (하이픈(-)포함)</th>
-						<td th:text="${item.managerTel}"></td>
-					</tr>
-				</table>
+					<table class="managerInfo">
+						<caption>2. 관리자 정보</caption>
+						<tr>
+							<th>관리자 성명</th>
+							<td th:text="${item.managerName}"></td>
+						</tr>
+						<tr>
+							<th>관리자 직위</th>
+							<td th:text="${item.managerPosition}"></td>
+						</tr>
+						<tr>
+							<th>관리자 연락처 (하이픈(-)포함)</th>
+							<td th:text="${item.managerTel}"></td>
+						</tr>
+					</table>
 
-				<table class="voteInfo" th:each="item, idx : ${applyFormList}">
-					<caption>3. 투표 정보</caption>
-					<tr>
-						<th>투표 제목 (대표 안건명)</th>
-						<td th:text="${item.voteTitle}"></td>
-					</tr>
-					<tr>
-						<th>예상 투표자 수</th>
-						<td th:text="${item.esmVoter}"></td>
-					</tr>
-					<tr>
-						<th>투표 시작</th>
-						<td th:text="${item.voteStartTime}"></td>
-					</tr>
-					<tr>
-						<th>투표 종료</th>
-						<td th:text="${item.voteEndTime}"></td>
-					</tr>
-				</table>
-
-			</form>
+					<table class="voteInfo">
+						<caption>3. 투표 정보</caption>
+						<tr>
+							<th>투표 제목 (대표 안건명)</th>
+							<td th:text="${item.voteTitle}"></td>
+						</tr>
+						<tr>
+							<th>예상 투표자 수</th>
+							<td th:text="${item.esmVoter}"></td>
+						</tr>
+						<tr>
+							<th>투표 시작</th>
+							<td th:text="${item.voteStartTime}"></td>
+						</tr>
+						<tr>
+							<th>투표 종료</th>
+							<td th:text="${item.voteEndTime}"></td>
+						</tr>
+					</table>
+				</form>
+			</div>
 		</article>
 
 	</section>

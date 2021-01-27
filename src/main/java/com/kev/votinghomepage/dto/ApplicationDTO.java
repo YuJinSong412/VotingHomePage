@@ -29,7 +29,14 @@ import lombok.Data;
 @NamedNativeQuery(
     query = "SELECT a.apart_name, a.apart_num, a.biz_lcs_num, m.manager_name, m.position, m.ph_num, v.vote_title, v.esm_voter, v.vote_start_date, v.vote_end_date \r\n"
         + "FROM application a INNER JOIN vote v ON a.vote_seq = v.vote_seq INNER JOIN vote_history h ON h.vote_seq = v.vote_seq INNER JOIN voting_manager m ON h.manager_seq = m.manager_seq\r\n"
-        + "WHERE a.vote_seq = (select vote_seq from vote_history where manager_seq = :MANAGER_SEQ);", name = "getApplyForm", resultSetMapping = "applyFormMapping")
+        + "WHERE a.vote_seq = (select vote_seq from vote_history where manager_seq = :MANAGER_SEQ);",
+    name = "getApplyForm", resultSetMapping = "applyFormMapping")
+
+@NamedNativeQuery(
+    query = "SELECT a.apart_name, a.apart_num, a.biz_lcs_num, m.manager_name, m.position, m.ph_num, v.vote_title, v.esm_voter, v.vote_start_date, v.vote_end_date \r\n"
+        + "FROM application a INNER JOIN vote v ON a.vote_seq = v.vote_seq INNER JOIN vote_history h ON h.vote_seq = v.vote_seq INNER JOIN voting_manager m ON h.manager_seq = m.manager_seq\r\n",
+    name = "getApplyForm_sysAdmin", resultSetMapping = "applyFormMapping")
+
 
 @Entity
 @Table(name = "application")

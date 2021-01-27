@@ -12,5 +12,8 @@ public interface ApplicationRepository extends JpaRepository<ApplicationDTO, Int
   @Query(name = "getApplyForm", nativeQuery = true)
   public List<ApplyForm> getApplyFormList(@Param("MANAGER_SEQ") int managerSeq);
   
-
+  @Query(name="getApplyForm_sysAdmin", nativeQuery = true)
+  public List<ApplyForm> getApplyFormList();
+  
+ 
 }
