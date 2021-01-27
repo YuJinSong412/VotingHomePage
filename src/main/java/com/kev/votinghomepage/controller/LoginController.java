@@ -36,11 +36,13 @@ public class LoginController {
     Optional<SysAdminDTO> dto = sysAdminRepo.findByAdminIDAndAdminPW(loginId, loginPw);
     SysAdminDTO result = dto.orElseGet(() -> null);
 
+   
     if (result == null) {
       Optional<VotingManagerDTO> dto2 =
           votingManagerRepo.findByManagerIdAndManagerPw(loginId, loginPw);
       VotingManagerDTO result2 = dto2.orElseGet(() -> new VotingManagerDTO());
 
+      
       if (loginId.equals(result2.getManagerId()) && loginPw.equals(result2.getManagerPw())) {
         req.getSession().setAttribute("managerSeq", result2.getManagerSeq());
         req.getSession().setAttribute("managerName", result2.getManagerName());

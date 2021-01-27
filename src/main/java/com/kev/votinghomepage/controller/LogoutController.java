@@ -11,7 +11,7 @@ public class LogoutController {
   @GetMapping("/logout")
   public String doLogout(HttpServletRequest req) {
     
-    req.getSession().removeAttribute("sysAdminId");
+    req.getSession().invalidate();
     
     return "redirect:/";
   }

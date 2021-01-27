@@ -1,27 +1,38 @@
-/**
- * 
- */
- 
-var currentIndex = -1; 
- 
-function myFunction(index) {
-		if(currentIndex == -1 || currentIndex == index ) {
-			let a = document.getElementById("subPage");
-			if (a.style.display === "none") {
-				a.style.display = "block";
-			} else {
-				a.style.display = "none";
-			}
-			currentIndex = index;	
-		}
+myFunction = (index) => {
+
+		let subPage = document.getElementById("subPage");
+			
+		let subPageContext = document.getElementById("subPage_" + index);
+		let detailButton = document.getElementById("appDetail_" + index);
 		
-		let x = document.getElementById("subPage_" + index);
-		let y = document.getElementById("appDetail");
-		if (x.style.display === "none") {
-			x.style.display = "block";
-			y.style.backgroundColor = "red";
+		
+		if (subPage.style.display === "none") {
+			subPage.style.display = "block";
+			subPageContext.style.display = "block";
+			detailButton.style.backgroundColor = "#027BE4";
 		} else {
-			x.style.display = "none";
-			y.style.backgroundColor = "white";
+			subPage.style.display = "none";
+			subPageContext.style.display = "none";
+			detailButton.style.backgroundColor = "white";
 		}
 }
+
+changeStatus = (index, voteStateCd) => {
+
+	alert(index + " || " + voteStateCd);
+	
+	let statusText = document.getElementById("statusText_" + index);
+	
+	if(voteStateCd == "01"){
+		statusText.innerHTML = "접수";
+	}else{
+		statusText.innerHTML = "dsfd";
+	}
+}
+
+mymy = () =>{
+	alert('sdfds');
+}
+
+
+

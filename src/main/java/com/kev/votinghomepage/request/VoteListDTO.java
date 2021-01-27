@@ -21,4 +21,6 @@ public class VoteListDTO {
   
   private Integer esmVoter;
   
+  private String voteStateCd;
+  
 }
