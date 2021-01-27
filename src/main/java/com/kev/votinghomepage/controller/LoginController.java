@@ -33,19 +33,19 @@ public class LoginController {
     String loginId = req.getParameter("loginId");
     String loginPw = req.getParameter("loginPW");
 
-    Optional<SysAdminDTO> dto = sysAdminRepo.findByAdminIDAndAdminPW(loginId, loginPw);
-    SysAdminDTO result = dto.orElseGet(() -> null);
+    Optional<SysAdminDTO> sysAdminDTO = sysAdminRepo.findByAdminIDAndAdminPW(loginId, loginPw);
+    SysAdminDTO result = sysAdminDTO.orElseGet(() -> null);
 
    
     if (result == null) {
-      Optional<VotingManagerDTO> dto2 =
+      Optional<VotingManagerDTO> votingManagerDTO =
           votingManagerRepo.findByManagerIdAndManagerPw(loginId, loginPw);
-      VotingManagerDTO result2 = dto2.orElseGet(() -> new VotingManagerDTO());
+      VotingManagerDTO v_result = votingManagerDTO.orElseGet(() -> new VotingManagerDTO());
 
       
-      if (loginId.equals(result2.getManagerId()) && loginPw.equals(result2.getManagerPw())) {
-        req.getSession().setAttribute("managerSeq", result2.getManagerSeq());
-        req.getSession().setAttribute("managerName", result2.getManagerName());
+      if (loginId.equals(v_result.getManagerId()) && loginPw.equals(v_result.getManagerPw())) {
+        req.getSession().setAttribute("managerSeq", v_result.getManagerSeq());
+        req.getSession().setAttribute("managerName", v_result.getManagerName());
         
         return "redirect:/votemanager/myPage";
       } else {

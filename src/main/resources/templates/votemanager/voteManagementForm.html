@@ -10,15 +10,22 @@
 </head>
 <body>
 	<div th:replace="gnb/header :: header(true)"></div>
-	<div th:replace="gnb/navGnb :: voteManagerGnb(activeNav='voteManagementForm')"></div>
+	<div
+		th:replace="gnb/navGnb :: voteManagerGnb(activeNav='voteManagementForm')"></div>
 
 	<section>
 		<div th:replace="gnb/pageTitle :: voteManagementFormTitle"></div>
 
 		<article>
-			<div class="statusBox">
-				<p>투표 시작 전</p>
-				<button type="button" class="voteStartBtn">투표 시작</button>
+			<div class="statusBox" th:each="item, idx : ${voteList}">
+				<p th:text="${item.voteStateCd}" id="voteBtnTitle">투표 시작 전</p>
+				<button type="button" class="voteStartBtn"
+					th:text="${T(com.kev.votinghomepage.enums.VoteStatusCode).getCodeTitle(item.voteStateCd)}"
+					th:data-parameter="${idx?.index}"
+					th:data-parameter2="${item?.voteStateCd}"
+					th:data-parameter3="${item?.voteSeq}"
+					th:onclick="voteStatus(this.getAttribute('data-parameter'), this.getAttribute('data-parameter2'), this.getAttribute('data-parameter3'))"
+					id="voteBtn">투표 시작</button>
 				<small>투표 시작 버튼을 누르면 투표가 시작됩니다.</small>
 			</div>
 		</article>

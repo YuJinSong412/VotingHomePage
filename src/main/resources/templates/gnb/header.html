@@ -18,6 +18,13 @@
 				style="cursor: pointer;">한국전자투표</h1>
 		</th:block>
 
+		<th:block th:if="${session.voterName}">
+			<h1 onclick="movePage('/voters/authentication')"
+				style="cursor: pointer;">한국전자투표</h1>
+			<div th:text="|${session.voterName}님 환영합니다!|" id="voterIntro"></div>
+			<a id="voterOut" th:href="@{/voters/voteOut}" >나가기</a>
+		</th:block>
+
 		<th:block th:if="${!session.isEmpty()}">
 			<a th:if="${loginPage}" th:href="@{/logout}" type="button"
 				class="loginBtn">로그아웃</a>

@@ -24,7 +24,7 @@
 					<button type="button" class="appDetail"
 						th:id="'appDetail_' + ${idx.index}"
 						th:onclick="|myFunction(${idx.index})|">이력</button>
-					<button th:if="${adminButton}" type="button" class="appApprove"
+					<button th:style="${item.voteStateCd=='02' ? 'background: gray;' : 'background: red'}" th:if="${adminButton}" type="button" class="appApprove"
 						th:id="'appApprove_' + ${idx.index}"
 						th:data-parameter="${idx?.index}"
 						th:data-parameter2="${item?.voteStateCd}"

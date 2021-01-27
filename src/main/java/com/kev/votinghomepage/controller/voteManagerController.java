@@ -88,7 +88,13 @@ public class voteManagerController {
   }
 
   @GetMapping("/voteManagementForm")
-  public String moveVoteManagementForm() {
+  public String moveVoteManagementForm(HttpServletRequest req, Model model) {
+
+    Integer managerSeq = (Integer) (req.getSession().getAttribute("managerSeq"));
+
+    List<VoteListDTO> voteList = voteRepo.getVoteList(managerSeq);
+
+    model.addAttribute("voteList", voteList);
 
     return "votemanager/voteManagementForm";
 
@@ -152,6 +158,16 @@ public class voteManagerController {
 
 
     return "redirect:/votemanager/voteManagementForm";
+  }
+
+  @PostMapping("/statusCode")
+  public @ResponseBody Void changeStatusCode(@RequestParam("voteSeq") Integer voteSeq,
+      @RequestParam("code") String code) {
+
+    voteRepo.updateStatusCodeByVoteSeq(code, voteSeq);
+
+    return null;
+
   }
 
 

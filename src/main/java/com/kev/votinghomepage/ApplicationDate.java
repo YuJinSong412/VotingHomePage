@@ -1,6 +1,5 @@
 package com.kev.votinghomepage;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class ApplicationDate {

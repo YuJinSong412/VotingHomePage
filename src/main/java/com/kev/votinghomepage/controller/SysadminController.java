@@ -42,7 +42,6 @@ public class SysadminController {
     model.addAttribute("voteList", voteList);
 
     List<ApplyForm> applyFormList = applicationRepo.getApplyFormList();
-    System.out.println(applyFormList.size());
     model.addAttribute("applyFormList", applyFormList);
 
     return "sysadmin/applicationStatusDetail";
@@ -57,7 +56,14 @@ public class SysadminController {
   }
 
   @GetMapping("/votingStatus")
-  public String moveVotingStatus() {
+  public String moveVotingStatus(HttpServletRequest req, Model model) {
+    
+    List<VoteListDTO> voteList = voteRepo.getVoteList();
+
+    model.addAttribute("voteList", voteList);
+
+    List<ApplyForm> applyFormList = applicationRepo.getApplyFormList();
+    model.addAttribute("applyFormList", applyFormList);
 
     return "sysadmin/votingStatus";
 
@@ -69,13 +75,14 @@ public class SysadminController {
     return "common/voteResult";
 
   }
-  
+
   @PostMapping("/statusCode")
-  public @ResponseBody Void changeStatusCode(@RequestParam("voteSeq") Integer voteSeq, @RequestParam("code") String code) {
-    
-    
+  public @ResponseBody Void changeStatusCode(@RequestParam("voteSeq") Integer voteSeq,
+      @RequestParam("code") String code) {
+
+
     voteRepo.updateStatusCodeByVoteSeq(code, voteSeq);
-    
+
     return null;
   }
 

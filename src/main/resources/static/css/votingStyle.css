@@ -33,7 +33,7 @@ article .candidateName {
 	flex-direction: column;
 }
 
-.prosAndCons button {
+.prosAndCons input {
 	margin-bottom: 20px;
 	margin-right: 10px;
 	border-radius: 7px;

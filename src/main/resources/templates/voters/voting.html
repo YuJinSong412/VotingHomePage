@@ -7,6 +7,7 @@
 <link rel="stylesheet" th:href="@{/css/votingStyle.css}">
 <title>투표하기 화면</title>
 <script defer th:src="@{/javascript/movePage.js}"></script>
+<script defer th:src="@{/javascript/buttonChange.js}"></script>
 </head>
 <body>
 	<div th:replace="gnb/header :: header(false)"></div>
@@ -15,23 +16,24 @@
 	<section>
 		<div th:replace="gnb/pageTitle :: votingTitle"></div>
 
-		<article>
-			<h2 class="votingTitle">투표 제목</h2>
+		<article th:each="item, idx : ${votingInfoList}">
+			<h2 class="votingTitle" th:text="${item.voteItemName}">투표 제목</h2>
 			<hr>
-			<form>
+			<form method="POST" action="/voters/voting.do">
 				<div class="voteContent">
 					<div class="candidate">
 						<h3>1. 후보자</h3>
-						<div class="candidateName">송유진</div>
+						<div class="candidateName" th:text="${item.candName}">후보자 이름</div>
 					</div>
 					<div class="prosAndCons">
-						<button type="button" class="approveBtn">찬성</button>
-						<button type="button" class="disapproveBtn">반대</button>
+						<input type="button" value = "찬성" id="approveBtn" onclick="btnChange(1)"></input>
+						<input type="button" value = "반대" id="disapproveBtn" onclick="btnChange(2)"></input>
+						<input type="hidden" value = "" id="sendResultBtn" name = "sendResultBtn"></input>
 					</div>
 					<div></div>
 				</div>
 				<div class="voteSubmit">
-					<button type="button" class="voteCompleted" onclick="movePage('/voters/voteResult')">투표 완료</button>
+					<button type="submit" class="voteCompleted">투표 완료</button>
 				</div>
 			</form>
 		</article>

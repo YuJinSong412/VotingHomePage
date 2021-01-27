@@ -7,7 +7,8 @@ public enum VoteStatusCode {
   B("02", "이용신청서 승인 완료"),
   C("03", "만들기 승인 완료"),
   D("04", "투표 진행 중"),
-  E("05", "개표 완료");
+  E("05", "개표 완료"),
+  F("06", "투표 시작");
 
   private final String codeNum;
 

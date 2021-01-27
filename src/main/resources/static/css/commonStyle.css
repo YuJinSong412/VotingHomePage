@@ -24,7 +24,7 @@ body {
 	font-family: 'MaplestoryOTFLight';
 }
 
-button{
+button {
 	cursor: pointer;
 }
 
@@ -45,7 +45,7 @@ header a {
 	margin-right: 10px;
 	border-radius: 7px;
 	border-color: #027BE4;
-	border:3px solid #027BE4;
+	border: 3px solid #027BE4;
 	width: 100px;
 	padding: 20px;
 	font-size: 20px;
@@ -53,7 +53,7 @@ header a {
 	background-color: white;
 	text-decoration: none;
 	text-align: center;
-	color : black;
+	color: black;
 }
 
 nav {
@@ -79,4 +79,25 @@ nav button.active {
 footer {
 	height: 20px;
 	border-top: 2px solid #969696;
+}
+
+#voterIntro {
+	position: absolute;
+	right: 130px;
+	font-size: 18px;
+	color:blue;
+}
+
+#voterOut {
+	
+	position: absolute;
+	right:10px;
+	background-color : white;
+	border-radius: 7px;
+	border : 3px solid #027BE4;
+	width:60px;
+	font-family: 'MaplestoryOTFLight';
+	font-size : 20px;
+	height:20px;
+	
 }

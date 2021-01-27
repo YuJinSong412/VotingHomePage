@@ -16,12 +16,12 @@ public interface VoteRepository extends JpaRepository<VoteDTO, Integer> {
 
   @Query(name = "getVoteList_sysAdmin", nativeQuery = true)
   public List<VoteListDTO> getVoteList();
-  
+
   @Transactional
   @Modifying
   @Query(value = "UPDATE vote SET vote_state_cd= :voteStateCd WHERE VOTE_SEQ= :voteSeq",
       nativeQuery = true)
-  void updateStatusCodeByVoteSeq(@Param("voteStateCd") String statusCode,
+  void updateStatusCodeByVoteSeq(@Param("voteStateCd") String ca,
       @Param("voteSeq") Integer voteSeq);
 
 }

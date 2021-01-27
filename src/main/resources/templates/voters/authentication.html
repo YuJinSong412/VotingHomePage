@@ -15,20 +15,19 @@
 		<div th:replace="gnb/pageTitle :: authenticationTitle"></div>
 		<article>
 			<div class="authenticationBox">
-				<form method="GET" action="/login/actionLogin" class="authenForm">
+				<form method="POST" action="/voters/authentication.do" class="authenForm">
 					<table class="authenTable">
-						<caption>동-호수를 입력해 주세요.</caption>
+						<caption>[동-호수] 와 [연락처]를 입력해 주세요.</caption>
 						<tr>
 							<th>동-호수</th>
-							<td><input type="text" class="addr"> 동 &nbsp; &nbsp;
-								&nbsp; <input type="text" class="addr"> 호</td>
+							<td><input type="text" name = "voterCont"class="addr"></td>
 						</tr>
 						<tr>
 							<th>연락처</th>
-							<td><input type="text" class="tel"></td>
+							<td><input type="tel" name = "phoneNum" class="tel"></td>
 						</tr>
 					</table>
-					<button type="button" class="authenBtn" onclick="movePage('/voters/voteOverview')">인증</button>
+					<button type="submit" class="authenBtn">인증</button>
 				</form>
 			</div>
 		</article>

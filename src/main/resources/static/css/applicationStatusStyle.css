@@ -264,12 +264,7 @@ article .authenticationBox {
 	font-weight: lighter;
 }
 
-.authenTable td .addr {
-	width: 100px;
-	height: 30px;
-}
-
-.authenTable td .tel {
+.authenTable td .addr, .tel {
 	width: 255px;
 	height: 30px;
 }
