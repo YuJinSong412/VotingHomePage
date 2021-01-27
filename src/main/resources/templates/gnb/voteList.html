@@ -20,7 +20,7 @@
 				<td th:text="${item.apartName}">아파트명</td>
 				<td th:text="|${item.voteStartDate} ~ ${item.voteEndDate}|">날짜</td>
 				<td rowspan="2" th:id="'listStatus_' +${idx.index}"
-					style="font-weight: bold;"><span th:id="'statusText_' + ${idx.index}">대기</span>
+					style="font-weight: bold;"><span th:id="'statusText_' + ${idx.index}" th:text="${T(com.kev.votinghomepage.enums.VoteStatusCode).getCodeTitle(item.voteStateCd)}">대기</span>
 					<button type="button" class="appDetail"
 						th:id="'appDetail_' + ${idx.index}"
 						th:onclick="|myFunction(${idx.index})|">이력</button>
@@ -28,7 +28,8 @@
 						th:id="'appApprove_' + ${idx.index}"
 						th:data-parameter="${idx?.index}"
 						th:data-parameter2="${item?.voteStateCd}"
-						th:onclick="changeStatus(this.getAttribute('data-parameter'), this.getAttribute('data-parameter2'))">승인</button>
+						th:data-parameter3="${item?.voteSeq}"
+						th:onclick="changeStatus(this.getAttribute('data-parameter'), this.getAttribute('data-parameter2'), this.getAttribute('data-parameter3'))">승인</button>
 				</td>
 			</tr>
 			<tr>

@@ -17,8 +17,7 @@ import lombok.Data;
 // @SqlResultSetMappings({~,})
 @SqlResultSetMapping(name = "voteListMapping",
     classes = @ConstructorResult(targetClass = VoteListDTO.class,
-        columns = {
-            @ColumnResult(name = "vote_seq", type = Integer.class),
+        columns = {@ColumnResult(name = "vote_seq", type = Integer.class),
             @ColumnResult(name = "apart_name", type = String.class),
             @ColumnResult(name = "vote_start_date", type = String.class),
             @ColumnResult(name = "vote_end_date", type = String.class),
@@ -55,7 +54,7 @@ public class VoteDTO {
 
   @Column(name = "ESM_VOTER")
   private Integer esmVoter;
-  
+
   @Column(name = "VOTE_STATE_CD")
   private String voteStateCd;
 
