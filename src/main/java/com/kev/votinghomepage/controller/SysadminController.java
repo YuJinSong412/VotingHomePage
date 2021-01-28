@@ -12,9 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.kev.votinghomepage.dao.ApplicationRepository;
 import com.kev.votinghomepage.dao.VoteRepository;
-import com.kev.votinghomepage.dto.VoteDTO;
-import com.kev.votinghomepage.request.ApplyForm;
-import com.kev.votinghomepage.request.VoteListDTO;
+import com.kev.votinghomepage.mergedto.ApplyForm;
+import com.kev.votinghomepage.mergedto.VoteListDTO;
 
 @Controller
 @RequestMapping("/sysadmin")

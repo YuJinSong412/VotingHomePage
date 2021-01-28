@@ -9,9 +9,3 @@ public interface SysadminRepository extends JpaRepository<SysAdminDTO, Integer> 
   Optional<SysAdminDTO> findByAdminIDAndAdminPW(String adminID, String adminPW);
 
 }
-
-
-
-// @Query(value = "SELECT * FROM SYSADMIN WHERE ADMIN_SEQ = :ADMIN_SEQ",
-// nativeQuery = true, resultMapping이름을 줄 수 잇음 )
-// List<Sys>findBydlsfknseknj(@Param("ADMIN_SEQ") int adminSeq);

@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.kev.votinghomepage.ApplicationDate;
 import com.kev.votinghomepage.RandomOut;
@@ -18,7 +17,7 @@ import com.kev.votinghomepage.dto.VoteDTO;
 import com.kev.votinghomepage.dto.VotingHistoryDTO;
 import com.kev.votinghomepage.dto.VotingManagerDTO;
 import com.kev.votinghomepage.enums.VoteStatusCode;
-import com.kev.votinghomepage.request.ApplyForm;
+import com.kev.votinghomepage.mergedto.ApplyForm;
 
 @Controller
 public class ApplyFormController {

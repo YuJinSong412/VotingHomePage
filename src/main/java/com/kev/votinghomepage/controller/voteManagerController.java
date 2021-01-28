@@ -12,9 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -25,11 +23,11 @@ import com.kev.votinghomepage.dao.VoteItemRepository;
 import com.kev.votinghomepage.dao.VoteRepository;
 import com.kev.votinghomepage.dao.VoterRepository;
 import com.kev.votinghomepage.dto.CandidateDTO;
-import com.kev.votinghomepage.dto.VoterDTO;
 import com.kev.votinghomepage.dto.VoteItemDTO;
-import com.kev.votinghomepage.request.ApplyForm;
-import com.kev.votinghomepage.request.VoteItem;
-import com.kev.votinghomepage.request.VoteListDTO;
+import com.kev.votinghomepage.dto.VoterDTO;
+import com.kev.votinghomepage.mergedto.ApplyForm;
+import com.kev.votinghomepage.mergedto.VoteItem;
+import com.kev.votinghomepage.mergedto.VoteListDTO;
 
 @Controller
 @RequestMapping("/votemanager")

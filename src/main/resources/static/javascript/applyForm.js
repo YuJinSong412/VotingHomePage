@@ -1,6 +1,7 @@
 window.addEventListener('load',function(){
 	document.getElementById('main-form').addEventListener("submit", handleFormSubmit);
 });
+
 async function handleFormSubmit(event) {
 	event.preventDefault();
 	const form = event.currentTarget;
@@ -17,6 +18,7 @@ async function handleFormSubmit(event) {
 		console.error(error);
 	}
 }
+
 async function postFormDataAsJson({ url, formData }) {
 	const plainFormData = Object.fromEntries(formData.entries());
 	const formDataJsonString = JSON.stringify(plainFormData);

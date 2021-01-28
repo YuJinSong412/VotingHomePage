@@ -1,4 +1,4 @@
-package com.kev.votinghomepage.request;
+package com.kev.votinghomepage.mergedto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

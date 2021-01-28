@@ -12,7 +12,6 @@ import com.kev.votinghomepage.dto.SysAdminDTO;
 import com.kev.votinghomepage.dto.VotingManagerDTO;
 
 @Controller
-// @RequestMapping("/login")
 public class LoginController {
 
   @Autowired
