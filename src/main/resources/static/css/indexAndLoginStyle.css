@@ -42,6 +42,17 @@ section .loginForm button {
 	font-family: 'MaplestoryOTFLight';
 	margin-top: 10px;
 	border-radius: 7px;
+	box-shadow: 0 5px #999;
+}
+
+section .loginForm button:hover {
+	background-color: #D6D6D6;
+}
+
+section .loginForm button:active {
+	background-color: #01C7C7;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
 }
 
 section .apartEvoteTitle {

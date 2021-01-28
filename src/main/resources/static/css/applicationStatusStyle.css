@@ -204,7 +204,19 @@ article .makeVoteForm .applyButton {
 	font-family: 'MaplestoryOTFLight';
 	margin-top: 10px;
 	border-radius: 7px;
+	box-shadow: 0 5px #999;
 }
+
+.applyButton button:hover {
+	background-color: #D6D6D6;
+}
+
+.applyButton button:active {
+	background-color: #01C7C7;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+
 
 article .statusBox {
 	width: 100%;
@@ -229,6 +241,17 @@ article .statusBox {
 	border: none;
 	color: white;
 	font-size: 35px;
+	box-shadow: 0 5px #999;
+}
+
+.statusBox .voteStartBtn:hover {
+	background-color: #D6D6D6;
+}
+
+.statusBox .voteStartBtn:active {
+	background-color: #1181E3;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
 }
 
 .statusBox small {
@@ -277,6 +300,18 @@ article .authenticationBox {
 	border: none;
 	font-size: 18px;
 	font-family: 'MaplestoryOTFLight';
+	box-shadow: 0 5px #999;
+	border-radius: 7px;
+}
+
+.authenForm .authenBtn:hover {
+	background-color: #D6D6D6;
+}
+
+.authenForm .authenBtn:active {
+	background-color: #01C7C7;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
 }
 
 .voterVoteOverviewBtn, .voterVoteResultBtn{
