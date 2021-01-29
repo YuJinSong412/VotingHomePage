@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 import com.kev.votinghomepage.dto.VoteDTO;
-import com.kev.votinghomepage.mergedto.VoteListDTO;
+import com.kev.votinghomepage.dto.bind.VoteListDTO;
 
 public interface VoteRepository extends JpaRepository<VoteDTO, Integer> {
 

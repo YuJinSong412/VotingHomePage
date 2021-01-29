@@ -16,7 +16,7 @@ import com.kev.votinghomepage.dao.VoterRepository;
 import com.kev.votinghomepage.dto.VoteParcpantDTO;
 import com.kev.votinghomepage.dto.VoteResultDTO;
 import com.kev.votinghomepage.dto.VoterDTO;
-import com.kev.votinghomepage.mergedto.VotingInfoDTO;
+import com.kev.votinghomepage.dto.bind.VotingInfoDTO;
 
 @Controller
 @RequestMapping("/voters")

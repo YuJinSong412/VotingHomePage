@@ -16,8 +16,8 @@ import com.kev.votinghomepage.dto.ApplicationDTO;
 import com.kev.votinghomepage.dto.VoteDTO;
 import com.kev.votinghomepage.dto.VotingHistoryDTO;
 import com.kev.votinghomepage.dto.VotingManagerDTO;
+import com.kev.votinghomepage.dto.bind.ApplyForm;
 import com.kev.votinghomepage.enums.VoteStatusCode;
-import com.kev.votinghomepage.mergedto.ApplyForm;
 
 @Controller
 public class ApplyFormController {

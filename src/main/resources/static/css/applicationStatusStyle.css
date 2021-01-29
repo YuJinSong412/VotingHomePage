@@ -74,6 +74,7 @@ article .appStatusList {
 	width: 100%;
 	border: 1.5px solid #ADADAD;
 	border-radius: 7px;
+	margin-bottom: 50px;
 }
 
 article .appStatusList td {

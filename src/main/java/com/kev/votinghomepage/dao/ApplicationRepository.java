@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import com.kev.votinghomepage.dto.ApplicationDTO;
-import com.kev.votinghomepage.mergedto.ApplyForm;
+import com.kev.votinghomepage.dto.bind.ApplyForm;
 
 public interface ApplicationRepository extends JpaRepository<ApplicationDTO, Integer>{
   

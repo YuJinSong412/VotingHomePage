@@ -25,9 +25,9 @@ import com.kev.votinghomepage.dao.VoterRepository;
 import com.kev.votinghomepage.dto.CandidateDTO;
 import com.kev.votinghomepage.dto.VoteItemDTO;
 import com.kev.votinghomepage.dto.VoterDTO;
-import com.kev.votinghomepage.mergedto.ApplyForm;
-import com.kev.votinghomepage.mergedto.VoteItem;
-import com.kev.votinghomepage.mergedto.VoteListDTO;
+import com.kev.votinghomepage.dto.bind.ApplyForm;
+import com.kev.votinghomepage.dto.bind.VoteItem;
+import com.kev.votinghomepage.dto.bind.VoteListDTO;
 
 @Controller
 @RequestMapping("/votemanager")

@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedNativeQuery;
 import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Table;
-import com.kev.votinghomepage.mergedto.ApplyForm;
+import com.kev.votinghomepage.dto.bind.ApplyForm;
 import lombok.Data;
 
 @SqlResultSetMapping(name = "applyFormMapping",

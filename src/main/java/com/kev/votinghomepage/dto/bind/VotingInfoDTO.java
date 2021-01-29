@@ -1,4 +1,4 @@
-package com.kev.votinghomepage.mergedto;
+package com.kev.votinghomepage.dto.bind;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

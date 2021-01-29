@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import com.kev.votinghomepage.dto.VoterDTO;
-import com.kev.votinghomepage.mergedto.VotingInfoDTO;
+import com.kev.votinghomepage.dto.bind.VotingInfoDTO;
 
 public interface VoterRepository extends JpaRepository<VoterDTO, Integer> {
 

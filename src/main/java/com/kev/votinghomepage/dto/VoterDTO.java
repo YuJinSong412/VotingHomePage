@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedNativeQuery;
 import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Table;
-import com.kev.votinghomepage.mergedto.VotingInfoDTO;
+import com.kev.votinghomepage.dto.bind.VotingInfoDTO;
 import lombok.Data;
 
 @SqlResultSetMapping(name = "votingInfoListMapping",
