@@ -23,7 +23,7 @@ import lombok.Data;
             @ColumnResult(name = "vote_end_date", type = String.class),
             @ColumnResult(name = "vote_title", type = String.class),
             @ColumnResult(name = "esm_voter", type = Integer.class),
-            @ColumnResult(name = "vote_state_cd", type = String.class),}))
+            @ColumnResult(name = "vote_state_cd", type = String.class) }))
 
 @NamedNativeQuery(
     query = "select v.vote_seq, a.apart_name, v.vote_start_date, v.vote_end_date, v.vote_title, v.esm_voter, v.vote_state_cd from application a JOIN vote v ON a.vote_seq = v.vote_seq where a.vote_seq = (select vote_seq from vote_history where manager_seq = :MANAGER_SEQ) ;",
